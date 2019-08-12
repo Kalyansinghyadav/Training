@@ -1,0 +1,305 @@
+ mkdir kalyan
+ 1464  cd kalyan/\
+ 1465  cd kalyan/
+ 1466  vi test
+ 1467  vi test1\
+ 1468  vi test1
+ 1469  ls
+ 1470  git init
+ 1471  ls
+ 1472  git add test test1
+ 1473  git commit -m "first commit" test test1
+ 1474  git remote add origin https://github.com/Kalyansinghyadav/testrepo.git
+ 1475  git push -u origin
+ 1476  cd ..
+ 1477  mkdir kalyan 1
+ 1478  mkdir kalyan1
+ 1479  cd kalyan1/
+ 1480  git clone https://github.com/Kalyansinghyadav/testrepo.git
+ 1481  ls
+ 1482  cd testrepo/
+ 1483  ls
+ 1484  vi test2
+ 1485  git status
+ 1486  git add test2
+ 1487  git commit -m "added new ffile" test2
+ 1488  git push origin master
+ 1489  ls
+ 1490  cd ..
+ 1491  cd kalyan
+ 1492  ls
+ 1493  git pull
+ 1494  ls
+ 1495  vi test
+ 1496  rm test2
+ 1497  ls
+ 1498  git status
+ 1499  git commit -m "Modified test file and deleted test2 file" test test2
+ 1500  git push origin master
+ 1501  cd ..
+ 1502  mkdir Git
+ 1503  cd Git
+ 1504  vi abc
+ 1505  git init
+ 1506  git add xyz abc
+ 1507  git commit -m " commit abc and xyz" xyz abc
+ 1508  git remote add origin https://github.com/Kalyansinghyadav/testrepo.git
+ 1509  git push -u origin master
+ 1510  git push -u origin
+ 1511  ls
+ 1512  git push --help
+ 1513  git status -s
+ 1514  git add .
+ 1515  cd..
+ 1516  cd ..
+ 1517  cd kalyan1
+ 1518  cd testrepo
+ 1519  git status
+ 1520  git status -s
+ 1521  git add .
+ 1522  git status -s
+ 1523  git clone https://github.com/Kalyansinghyadav/testrepo.git
+ 1524  history
+ 1525  clear
+ 1526  cd 
+ 1527  cd Desktop/
+ 1528  mkdir git
+ 1529  cd git
+ 1530  vi abc.txt
+ 1531  cd Desktop/
+ 1532  cd git
+ 1533  touch abc.text
+ 1534  touch xyz.text
+ 1535  ls
+ 1536  git init
+ 1537  git config user.email "Kalyan.singh@berylsystems.com"
+ 1538  git config user.name "Kalyan Singh"
+ 1539  git status
+ 1540  git add -A
+ 1541  git status
+ 1542  git commit -m "added three files abc xyz .abc"
+ 1543  git status
+ 1544  git remote add origin https://github.com/Kalyansinghyadav/firstrepo.git
+ 1545  git status
+ 1546  git push -u origin
+ 1547  cd ..
+ 1548  mkdir git1
+ 1549  cd git1
+ 1550  git clone https://github.com/Kalyansinghyadav/firstrepo.git
+ 1551  git status
+ 1552  clear
+ 1553  git status
+ 1554  cd firstrepo
+ 1555  touch b.text
+ 1556  git status
+ 1557  git add b.text
+ 1558  git status
+ 1559  git commit -m "added file b"
+ 1560  git status
+ 1561  git push origin master
+ 1562  git status
+ 1563  cd ..
+ 1564  cd /
+ 1565  cd -
+ 1566  cd ..
+ 1567  cd git
+ 1568  git pull origin master
+ 1569  git status
+ 1570  ls
+ 1571  ls -l
+ 1572  chmod 764
+ 1573  chmod 764 abc.text
+ 1574  ls -l
+ 1575  git branch
+ 1576  git branch new
+ 1577  git branch
+ 1578  git checkout new
+ 1579  git branch
+ 1580  git status
+ 1581  git add -A
+ 1582  git status
+ 1583  git commit -m "modified abc change permissions"
+ 1584  git status
+ 1585  git push origin master
+ 1586  git merge new
+ 1587  git checkout master
+ 1588  git status
+ 1589  git push origin master
+ 1590  git status
+ 1591  touch root.html
+ 1592  git status
+ 1593  ls
+ 1594  git add root.html
+ 1595  git status
+ 1596  git commit -m "add hmtl file root"
+ 1597  git status
+ 1598  git push origin master
+ 1599  ls -l
+ 1600  git status
+ 1601  chmod 754 root.html
+ 1602  ls -l
+ 1603  clear
+1664  git clone https://github.com/Kalyansinghyadav/firstrepo.git
+ 1665  ls 
+ 1666  cd firstrepo
+ 1667  git add abc.txt
+ 1668  touch b2.xml
+ 1669  git status
+ 1670  git add b2.xml
+ 1671  git status
+ 1672  git commit -m "added xml file b2"
+ 1673  git status
+ 1674  git push origin master
+ 1675  git status
+ 1676  cd -
+ 1677  cd ..
+ 1678  cd git 
+ 1679  git status
+ 1680  git pull origin master
+ 1681  git status
+ 1682  git commit -m "modified root.html and xyz.text"
+ 1683  git add -A
+ 1684  git status
+ 1685  git commit -m "modified root.html and xyz.text"
+ 1686  git status
+ 1687  git push origin master
+ 1688  git status
+ 1689  ls -l
+ 1690  cd .
+ 1691  cd ..
+ 1692  vi edit.text
+ 1693  vi /home/beryl/Desktop/f5/abc.text
+ 1694  cd git 
+ 1695  git --version
+ 1696  cd ..
+ 1697  version
+ 1698  --version
+ 1699  -help
+ 1700  man -version\
+ 1701  man -version
+ 1702  cd ..
+ 1703  lsb_release -a
+ 1704  git -version
+ 1705  git --version
+ 1706  clear
+ 1707  cd Desktop/
+ 1708  cd f5
+ 1709  ls -l
+ 1710  vi abc.text
+ 1711  cd Desktop/
+1712  cd git1
+ 1713  cd ..
+ 1714  cd ~
+ 1715  pwd
+ 1716  cd -\
+ 1717  rm aaa.text 
+ 1718  ls
+ 1719  mv class.sh c.sh
+ 1720  ls
+ 1721  ls -d
+ 1722  ls -d */
+ 1723  ls -li
+ 1724  clear
+ 1725  ls -lx
+ 1726  ls -R
+ 1727  ls --color=always
+ 1728  ls --color=auto
+ 1729  git init
+ 1730  cd Unix
+ 1731  touch set.c
+ 1732  ls
+ 1733  git init
+ 1734  git add -A
+ 1735  git status
+ 1736  git commit -m "add two files abc and set"
+ 1737  git status
+ 1738  git remote add origin https://github.com/Kalyansinghyadav/hello-world.git
+ 1739  git status
+ 1740  git push origin master
+ 1741  git branch
+ 1742  git status
+ 1743  git push origin master
+ 1744  git pull origin master
+ 1745  git status
+ 1746  git push origin master
+ 1747  git push --help
+ 1748  git status
+ 1749  git clone https://github.com/Kalyansinghyadav/hello-world.git
+ 1750  git status
+ 1751  git pull origin master
+ 1752  git status
+ 1753  git add -A
+ 1754  git status
+ 1755  git commit -m "add hello world"
+ 1756  git status
+ 1757  git push origin master
+ 1758  git remote add origin https://github.com/Kalyansinghyadav/hello-world.git
+ 1759  ls
+ 1760  rm abc.text hello-world set.c
+ 1761  ls
+ 1762  cd hello-world/
+ 1763  ls -l
+ 1764  touch set.html
+ 1765  git stats
+ 1766  git status
+ 1767  git add set.html
+ 1768  git status
+ 1769  git commit -m "added html file set"
+ 1770  git status
+ 1771  git push origin master
+ 1772  clear
+ 1776  vi abc.text
+ 1777  chmod abc.text
+ 1778  chmod --help
+ 1779  vi abc.text
+ 1780  cd Desktop/
+ 1781  mkdir abc
+ 1782  cd abc
+ 1783  touch a.txt b.txt
+ 1784  ls
+ 1785  cd ..
+ 1786  mkdir set
+ 1787  cd set
+ 1788  cd ..
+ 1789  cd abc
+ 1790  cp -r /home/beryl/Desktop/set/
+ 1791  cp -r /home/beryl/Desktop/abc/ /home/beryl/Desktop/set/
+ 1792  cd ..
+ 1793  cd set
+ 1794  ls
+ 1795  cd abc
+ 1796  ls
+ 1797  cp -r /home/beryl/Desktop/abc/ /home/beryl/Desktop/set/clear
+ 1798  clear
+ 1799  git init
+ 1800  git add -A
+ 1801  git status
+ 1802  git commit -m "added two files"
+ 1803  git status
+ 1804  git remote add origin https://github.com/Kalyansinghyadav/second.git
+ 1805  git push origin master
+ 1806  vi b.txt
+ 1807  git status
+ 1808  git add -A
+ 1809  git status
+ 1810  git commit -m "modified b.txt"
+ 1811  git status
+ 1812  git push origin master
+ 1813  touch ab.text abc.text
+ 1814  vi a.text
+ 1815  rm b.text
+ 1816  ls
+ 1817  rm b.txt
+ 1818  ls
+ 1819  git add ab.text
+ 1820  git status
+ 1821  ls
+ 1822  rm a.text
+ 1823  ls
+ 1824  git status
+ 1825  vi a.txt
+ 1826  git status
+ 1827  git commit -m "modified and added new file"
+ 1828  git status
+ 1829  git push origin master
+

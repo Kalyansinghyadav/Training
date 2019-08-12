@@ -1,0 +1,106 @@
+1832  lsb_release -a
+ 1833  sudo vi /etc/apt/sources.list.d/pgdg.list and add a line for the repository
+ 1834  sudo vi /etc/apt/sources.list.d/pgdg.list
+ 1835  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+ 1836  sudo apt-get update
+ 1837  sudo apt-get install postgresql-10
+ 1838  cd ~
+ 1839  cd /etc/postgresql/10/
+ 1840  ll
+ 1841  cd main/
+ 1842  ll
+ 1843  sudo vi postgresql.conf
+ 1844  sudo vi pg_hba.conf
+ 1845  ip
+ 1846  ip addr show
+ 1847  sudo vi pg_hba.conf
+ 1848  /etc/init.d/postgresql restart
+ 1849  sudo ufw status
+ 1850  sudo ufw allow 5432
+ 1851  sudo ufw status numbered
+ 1852  postgresql
+ 1853  plsql
+ 1854  sudo ufw default allow
+ 1855  sudo ufw status
+ 1856  sudo ufw enable
+ 1857  sudo ufw status
+ 1858  sudo ufw status numbered
+ 1859  sudo su postgres
+ 1860  sudo apt-get update
+ 1861  sudo apt-get install postgresql postgresql-contrib
+ 1862  sudo -s
+ 1863  su postgres
+ 1864  sudo apt-get --purge remove postgresql
+ 1865  dpkg -l | grep postgres
+ 1866  sudo apt-get --purge remove postgresql postgresql-doc postgresql-common
+ 1867  clear
+ 1868  sudo apt-get update
+ 1869  sudo apt-get install postgresql postgresql-contrib
+ 1870  sudo -s
+ 1871  history
+ 1872  sudo -u postgres psql
+ 1873  psql -u postgres1 postgres
+ 1874  psql --help
+ 1875  createdb -h localhost -p 5432 -U postgres db1;
+ 1876  createdb -h localhost -p 5432 -U postgres1 db1;
+ 1877  psql -h localhost -p 5432 -U postgres1 db1;
+ 1878  cd Desktop/
+ 1879  mkdir Kalyan
+ 1880  cd Kalyan/
+ 1881  nano database.txt
+ 1882  touch database.txt
+ 1883  cd /\
+ 1884  cd /
+ 1885  cd ~
+ 1886  \l
+ 1887  psql
+ 1888  psql -u postgres1 postgres
+ 1889  psql postgres1 postgres
+ 1890  psql -h localhost -p 5432 -u postgres1 db1
+ 1891  psql -h localhost -p 5432 -U postgres1 db1
+ 1892  psql -V
+ 1893  psql -h localhost -p 5432 -U postgres1 db1
+ 1894  PSQL -V
+ 1895  psql -V
+ 1896  psql -h localhost -p 5432 -U postgres1 db1
+ 1897  psql db1 postgres1
+ 1898  psql -U db1 postgres1
+ 1899  psql -h localhost -p 5432 -U postgres1 db1
+ 1900  sudo -s;
+ 1901  psql postgres1 postgres
+ 1902  psql postgres
+ 1903  psql postgres1
+ 1904  su - postgres
+ 1905  psql -h localhost -p 5432 -U kalyan HMS
+ 1906  psql -h localhost -p 5432 -U postgres1 db1
+ 1907  psql -h localhost -p 5432 -U kalyan hms
+ 1908  psql -h localhost -p 5432 -U kalyan HMS
+ 1909  git status
+ 1910  clear
+ 1911  cd Desktop/set/
+ 1912  git status
+ 1913  ls 
+ 1914  git status
+ 1915  git pull origin master
+ 1916  cd ..
+ 1917  cd abc
+ 1918  git status
+ 1919  git init
+ 1920  git status
+ 1921  git add -A 
+ 1922  git status
+ 1923  git commit -m "added file"
+ 1924  git status
+ 1925  git push origin master
+ 1926  clear
+ 1927  cd /
+ 1928  cd ~
+ 1929  psql -h localhost -p 5432 -U kalyan HMS
+ 1930  createdb -h localhost -p 5432 -U kalyan hms1
+ 1931  psql -h localhost -p 5432 -U kalyan hms1
+ 1932  psql -h localhost -p 5432 -U kalyan HMS
+ 1933  createdb -h localhost -p 5432 -U kalyan hms2
+ 1934  psql -h localhost -p 5432 -U kalyan hms2
+ 1935  psql -h localhost -p 5432 -U kalyan HMS
+ 1936  psql -h localhost -p 5432 -U kalyan hms2
+

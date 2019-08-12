@@ -1,0 +1,236 @@
+ 1601  chmod 754 root.html
+ 1602  ls -l
+ 1603  clear
+ 1604  nano linuxcommonds.text
+ 1605  pwd
+ 1606  cd ..
+ 1607  cd /
+ 1608  echo "hello"
+ 1609  sudo
+ 1610  ls --help
+ 1611  ls --author
+ 1612  ls -LS >text.txt
+ 1613  ls -lS>ts.text
+ 1614  ls -LS > test.txt
+ 1615  clear
+ 1616  cls
+ 1617  ls
+ 1618  cat root
+ 1619  cat home
+ 1620  ls -l
+ 1621  cd /home/beryl/
+ 1622  ls
+ 1623  cat 2.txt
+ 1624  cat simple.txt
+ 1625  less simple.txt
+ 1626  cd Desktop/
+ 1627  cd git
+ 1628  ls
+ 1629  cat xyz.txt
+ 1630  cat xyz.text
+ 1631  cat -b xyz.text
+ 1632  cat -n xyz.text
+ 1633  cat -s xyz.text
+ 1634  grep it xyz.text
+ 1635  grep line xyz.text
+ 1636  grep -i line xyz.text
+ 1637  sort xyz.text
+ 1638  sort -r xyz.text
+ 1639  sort -n xyz.text
+ 1640  ls -l
+ 1641  cp abc.text /home /beryl/public
+ 1642  cp abc.text /home/beryl/Desktop/
+ 1643  ls -l
+ 1644  cd ..
+ 1645  cp abc.text /home/beryl/Desktop//Unix/
+ 1646  ls /home/beryl/Desktop//Unix/
+ 1647  mv abc.text /home/beryl/Desktop//f5/
+ 1648  nano class.sh
+ 1649  ./class.sh
+ 1650  ls class.sh
+ 1651  ls -l
+ 1652  clea5r
+ 1653  clear
+ 1654  chmod +x class.sh
+ 1655  ./class.sh
+ 1656  nano sudo.txt
+ 1657  sudo yum install php.bcmath
+ 1658  sudo yum install php-bcmath
+ 1659  sudo yum install php -bcmath
+ 1660  ls -l
+ 1661  chmod 764 sudo.txt
+ 1662  ls -l
+whoami
+ 1289  is
+ 1290  Is
+ 1291  Is-l
+ 1292  Is-I
+ 1293  Is -l
+ 1294  ls -l
+ 1295  w
+ 1296  ls-l
+ 1297  ls -l
+ 1298  clear
+ 1299  ls
+ 1300  ls -l
+ 1301  clear
+ 1302  mkdir basic
+ 1303  mkdir basic/work
+ 1304  man mkdir
+ 1305  mkdir -p basic/work/programs/reports
+ 1306  ls
+ 1307  ls -a
+ 1308  ls -R
+ 1309  clear
+ 1310  ls -d
+ 1311  ls -F
+ 1312  ls *.doc
+ 1313  ls * .txt
+ 1314  clear
+ 1315  ls -a
+ 1316  clear
+ 1317  vi Kalyan
+ 1318  vi active
+ 1319  cat active
+ 1320  cd ~
+ 1321  cd -
+ 1322  cd ~
+ 1323  pwd
+ 1324  mkdir /test/copy/linux
+ 1325  mkdir -p  /test/copy/linux
+ 1326  mkdir -p /test/copy/linux
+ 1327  mkdir -p test/copy/linux
+ 1328  mkdir tmp
+ 1329  ls
+ 1330  mkdir /test/copy/linux
+ 1331  mkdir /test/copy
+ 1332  mkdir same diff
+ 1333  rmdir same diff
+ 1334  ls -la
+ 1335  rm active
+ 1336  clear
+ 1337  echo "what is your name"
+ 1338  date
+ 1339  #!/bin/sh
+ 1340  pwd
+ 1341  ls
+ 1342  #!/bin/sh pwd ls
+ 1343  USER
+ 1344  user
+ 1345  clear
+ 1346  users
+ 1347  ls -a
+ 1348  ls -l
+ 1349  wc f1 f2
+ 1350  wc f1 fg
+ 1351  cd ~username
+ 1352  cd -
+ 1353  pwd
+ 1354  ls -l
+ 1355  ls music
+ 1356  ls /music
+ 1357  ls public
+ 1358  ls test
+ 1359  ls tmp
+ 1360  ls Training
+ 1361  pwd
+ 1362  cd /home/beryl/Desktop
+ 1363  cd /home/beryl/Desktop/DB
+ 1364  ls -l
+ 1365  ls
+ 1366  pwd
+ 1367  cd -
+ 1368  mkdir Linux
+ 1369  cd ~
+ 1370  cd/
+ 1371  cd /
+ 1372  cd..
+ 1373  cd ..
+ 1374  clear
+ 1375  cd ~
+ 1376  cd ..
+ 1377  cd -
+ 1378  cd ..
+ 1379  cd -
+ 1380  pwd
+ 1381  cd /home/beryl/Desktop
+ 1382  mkdir Unix f5
+ 1383  ls
+ 1384  cd f5
+ 1385  vi abc.txt
+ 1386  vi xyz
+ 1387  touch abc.txt
+ 1388  ls
+ 1389  cd /home
+ 1390  pwd
+ 1391  cd -
+ 1392  cd /
+ 1393  cd -
+ 1394  cd ../ ../f5/Desktop
+ 1395  cd ../ ../
+ 1396  cd ../ ../Linux/Unix
+ 1397  clear
+ 1398  cd /Linux
+ 1399  cd Linux
+ 1400  cd -
+ 1401  cd ~
+ 1402  cd -
+ 1403  cd /
+ 1404  cd -
+ 1405  cd Desktop
+ 1406  cd ..
+ 1407  cd Linux
+ 1408  cd ..
+ 1409  cd /Linux
+ 1410  cd /Desktop
+ 1411  cd /home
+ 1412  cd -
+ 1413  cd /home
+ 1414  homecd -
+ 1415  cd /home
+ 1416  cd home
+ 1417  cd /
+ 1418  cd home
+ 1419  cd /
+ 1420  cd /home
+ 1421  cd /
+ 1422  cd home
+ 1423  cd Desktop
+ 1424  cd /
+ 1425  cd -
+ 1426  cd home/beryl
+ 1427  cd /home/beryl/Desktop/
+ 1428  ls
+ 1429  clear
+ 1430  ls -lh
+ 1431  ls -lhs
+ 1432  ls -l --block- size=[mb]
+ 1433  ls -l --block- size=[byte]
+ 1434  ls -l --block- size=[Mb]
+ 1435  ls -l --block- size=[K]
+ 1436  ls -l --block- size=[2]
+ 1437  ls -l --block- size=[4.0K]
+ 1438  clear
+ 1439  ls -d*/
+ 1440  ls -d */
+ 1441  ls -g
+ 1442  ls
+ 1443  ls -l
+ 1444  ls -lG
+ 1445  ls -n
+ 1446  ls --color=[RED]
+ 1447  ls --color=[yes]
+ 1448  ls --color=yes
+ 1449  ls --color='auto'
+ 1450  ls --color='none'
+ 1451  ls --color='RED'
+ 1452  ls --color='always'
+ 1453  ls -li
+ 1454  ls -p
+ 1455  ls -r
+ 1456  ls -R
+ 1457  clear
+ 1458  ls -lX
+ 1459  ls ~
+ 1460  ls ../
+
