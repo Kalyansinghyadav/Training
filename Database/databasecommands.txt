@@ -104,3 +104,335 @@
  1935  psql -h localhost -p 5432 -U kalyan HMS
  1936  psql -h localhost -p 5432 -U kalyan hms2
 
+
+CREATE DATABASE FLIGHTINFORMATION:--------
+
+beryl@beryl-HP-Compaq-Elite-8300-CMT:~$ createdb -h localhost -p 5432 -U kalyan flightinformation
+Password: 
+beryl@beryl-HP-Compaq-Elite-8300-CMT:~$ psql -h localhost -p 5432 -U kalyan flightinformation
+Password for user kalyan: 
+psql (11.4 (Ubuntu 11.4-1.pgdg18.04+1))
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+
+flightinformation=> CREATE TABLE FLIGHTS(FLNO INT PRIMARY KEY NOT NULL, SOURCE TEXT NOT NULL, DESTINATION TEXT NOT NULL, DISTANCE INT, DEPARTS TIME NOT NULL, ARRIVES TIME NOT NULL, PRICE INT);
+CREATE TABLE
+flightinformation=> SELECT * FROM FLIGHTS;
+ flno | source | destination | distance | departs | arrives | price 
+------+--------+-------------+----------+---------+---------+-------
+(0 rows)
+
+
+flightinformation=> INSERT INTO FLIGHTS VALUES(1001,'DELHI','MUMBAI',1400,'08:15:00','11:30:00',10000);
+INSERT 0 1
+flightinformation=> SELECT * FROM FLIGHTS;
+ flno | source | destination | distance | departs  | arrives  | price 
+------+--------+-------------+----------+----------+----------+-------
+ 1001 | DELHI  | MUMBAI      |     1400 | 08:15:00 | 11:30:00 | 10000
+(1 row)
+
+flightinformation=> INSERT INTO FLIGHTS VALUES(1002,'DELHI','CHENNAI',2200,'07:15:00','10:10:00',15000);
+INSERT 0 1
+flightinformation=> INSERT INTO FLIGHTS VALUES(1003,'LUCKNOW','DUBAI',5000,'07:15:00','15:40:00',50000);
+INSERT 0 1
+flightinformation=> INSERT INTO FLIGHTS VALUES(1004,'KOLKATA','US',10000,'21:15:00','06:35:00',75000);
+INSERT 0 1
+flightinformation=> INSERT INTO FLIGHTS VALUES(1005,'KOLKATA','LUCKNOW',1000,'20:15:00','23:32:00',3000);
+INSERT 0 1
+flightinformation=> SELECT * FROM FLIGHTS;
+ flno | source  | destination | distance | departs  | arrives  | price 
+------+---------+-------------+----------+----------+----------+-------
+ 1001 | DELHI   | MUMBAI      |     1400 | 08:15:00 | 11:30:00 | 10000
+ 1002 | DELHI   | CHENNAI     |     2200 | 07:15:00 | 10:10:00 | 15000
+ 1003 | LUCKNOW | DUBAI       |     5000 | 07:15:00 | 15:40:00 | 50000
+ 1004 | KOLKATA | US          |    10000 | 21:15:00 | 06:35:00 | 75000
+ 1005 | KOLKATA | LUCKNOW     |     1000 | 20:15:00 | 23:32:00 |  3000
+(5 rows)
+
+
+CREATE TABLE AIRCRAFT(AID INT PRIMARY KEY,ANAME TEXT NOT NULL,CRUISERANGE INT);
+CREATE TABLE
+flightinformation=> SELECT * FROM AIRCRAFT;
+ aid | aname | cruiserange 
+-----+-------+------------
+
+
+flightinformation=> INSERT INTO AIRCRAFT VALUES(1,'AIRBUS A-333',450),(2,'BOEING 777',600);
+INSERT 0 2
+flightinformation=> INSERT INTO AIRCRAFT VALUES(3,'sukhoi su',650),(4,'dasault rafale',700);
+INSERT 0 2
+flightinformation=> select * from Aircrafts;
+ERROR:  relation "aircrafts" does not exist
+LINE 1: select * from Aircrafts;
+                      ^
+flightinformation=> select * from Aircraft;
+ aid |     aname      | cruiserange 
+-----+----------------+-------------
+   1 | AIRBUS A-333   |         450
+   2 | BOEING 777     |         600
+   3 | sukhoi su      |         650
+   4 | dasault rafale |         700
+(4 rows)
+
+
+flightinformation=> CREATE TABLE EMPLOYEES(EID INT PRIMARY KEY,ENAME TEXT NOT NULL,SALARY INT);
+CREATE TABLE
+flightinformation=> SELECT * FROM EMPLOYEES;
+ eid | ename | salary 
+-----+-------+--------
+(0 rows)
+
+
+
+flightinformation=> INSERT INTO EMPLOYEES VALUES(101,'VAIBHAV',80000),(102,'SACHIN',70000),(103,'RATAN',85000),(104,'MARTIN',100000),(105,'VISWASH',90000);
+INSERT 0 5
+flightinformation=> SELECT * FROM EMPLOYEES;
+ eid |  ename  | salary 
+-----+---------+--------
+ 101 | VAIBHAV |  80000
+ 102 | SACHIN  |  70000
+ 103 | RATAN   |  85000
+ 104 | MARTIN  | 100000
+ 105 | VISWASH |  90000
+(5 rows)
+
+
+
+flightinformation=> CREATE TABLE CERTIFIED(EID INT REFERENCES EMPLOYEES(EID),AID INT REFERENCES AIRCRAFT(AID));
+CREATE TABLE
+flightinformation=> SELECT * FROM CERTIFIED;
+ eid | aid 
+-----+-----
+(0 rows)
+
+flightinformation=> INSERT INTO CERTIFIED VALUES(101,2),(102,1),(104,4),(105,3);
+INSERT 0 4
+
+
+flightinformation=> SELECT * FROM CERTIFIED;
+ eid | aid 
+-----+-----
+ 101 |   2
+ 102 |   1
+ 104 |   4
+ 105 |   3
+(4 rows)
+
+
+SELECT ANAME,ENAME,SALARY FROM AIRCRAFT,CERTIFIED,EMPLOYEES WHERE AIRCRAFT.AID=CERTIFIED.AID AND CERTIFIED.EID=EMPLOYEES.EID AND SALARY>80000;
+     aname      |  ename  | salary 
+----------------+---------+--------
+ dasault rafale | MARTIN  | 100000
+ sukhoi su      | VISWASH |  90000
+(2 rows)
+
+
+
+INSERT INTO AIRCRAFT VALUES(6,'BOING C-17',1200),(7,'MIG-29',1800);
+INSERT 0 2
+flightinformation=> SELECT * FROM AIRCRAFT;
+ aid |     aname      | cruiserange 
+-----+----------------+-------------
+   1 | AIRBUS A-333   |         450
+   2 | BOEING 777     |         600
+   3 | sukhoi su      |         650
+   4 | dasault rafale |         700
+   6 | BOING C-17     |        1200
+   7 | MIG-29         |        1800
+(6 rows)
+of
+
+flightinformation=> INSERT INTO EMPLOYEES VALUES(106,'DENIAL',100000),(107,'ABHINANDAN',200000),(108,'MURTI',50000);
+INSERT 0 3
+flightinformation=> SELECT * FROM EMPLOYEES;
+ eid |   ename    | salary 
+-----+------------+--------
+ 101 | VAIBHAV    |  80000
+ 102 | SACHIN     |  70000
+ 103 | RATAN      |  85000
+ 104 | MARTIN     | 100000
+ 105 | VISWASH    |  90000
+ 106 | DENIAL     | 100000
+ 107 | ABHINANDAN | 200000
+ 108 | MURTI      |  50000
+(8 rows)
+
+flightinformation=> SELECT * FROM AIRCRAFT;
+ aid |     aname      | cruiserange 
+-----+----------------+-------------
+   1 | AIRBUS A-333   |         450
+   2 | BOEING 777     |         600
+   3 | sukhoi su      |         650
+   4 | dasault rafale |         700
+   6 | BOING C-17     |        1200
+   7 | MIG-29         |        1800
+   5 | BOING          |        1100
+(7 rows)
+
+flightinformation=> SELECT ENAME ,ANAME FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID AND ANAME='BOING';
+  ename  | aname 
+---------+-------
+ VAIBHAV | BOING
+(1 row)
+
+flightinformation=> SELECT ENAME ,ANAME FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID AND ANAME LIKE 'BO%';
+   ename    |   aname    
+------------+------------
+ VAIBHAV    | BOEING 777
+ ABHINANDAN | BOEING 777
+ VISWASH    | BOING C-17
+ VAIBHAV    | BOING C-17
+ SACHIN     | BOING C-17
+ VAIBHAV    | BOING
+ SACHIN     | BOING C-17
+(7 rows)
+
+flightinformation=> UPDATE AIRCRAFT SET ANAME='BOEING C17' WHERE AID=6;
+UPDATE 1
+flightinformation=> UPDATE AIRCRAFT SET ANAME='BOEING C20' WHERE AID=5;
+UPDATE 1
+flightinformation=> SELECT * FROM AIRCRAFT;
+ aid |     aname      | cruiserange 
+-----+----------------+-------------
+   1 | AIRBUS A-333   |         450
+   2 | BOEING 777     |         600
+   3 | sukhoi su      |         650
+   4 | dasault rafale |         700
+   7 | MIG-29         |        1800
+   6 | BOEING C17     |        1200
+   5 | BOEING C20     |        1100
+(7 rows)
+
+flightinformation=> SELECT ENAME ,ANAME FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID AND ANAME LIKE 'BOEING%';
+   ename    |   aname    
+------------+------------
+ VAIBHAV    | BOEING 777
+ ABHINANDAN | BOEING 777
+ VISWASH    | BOEING C17
+ VAIBHAV    | BOEING C17
+ SACHIN     | BOEING C17
+ VAIBHAV    | BOEING C20
+ SACHIN     | BOEING C17
+(7 rows)
+
+SELECT ENAME,COUNT(ANAME) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID  group by ENAME HAVING COUNT(ANAME)>3
+flightinformation-> ;
+  ename  | count 
+---------+-------
+ SACHIN  |     6
+ VISWASH |     4
+ VAIBHAV |     4
+(3 rows)
+
+flightinformation=> SELECT EMPLOYEES.EID,COUNT(ANAME) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID  group by EMPLOYEES.EID HAVING COUNT(ANAME)>3
+;
+ eid | count 
+-----+-------
+ 102 |     6
+ 101 |     4
+ 105 |     4
+
+INSERT INTO AIRCRAFT VALUES (9,'F-16',4500),(10,'MIG-21',5000);
+INSERT 0 2
+flightinformation=> INSERT INTO CERTIFIED VALUES(104,9),(103,10),(107,9);
+INSERT 0 3
+flightinformation=> SELECT ENAME,CRUISERANGE,ANAME FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID AND ANAME NOT LIKE'BOEING%' AND CRUISERANGE>3000;
+   ename    | cruiserange | aname  
+------------+-------------+--------
+ MARTIN     |        4500 | F-16
+ RATAN      |        5000 | MIG-21
+ ABHINANDAN |        4500 | F-16
+(3 rows)
+
+
+ SELECT AVG(SALARY) FROM EMPLOYEES;
+        avg         
+--------------------
+ 99500.000000000000
+(1 row)
+
+flightinformation=> SELECT AVG(SALARY) FROM EMPLOYEES,CERTIFIED WHERE EMPLOYEES.EID=CERTIFIED.EID;
+        avg         
+--------------------
+ 94250.000000000000
+(1 row)
+
+flightinformation=> SELECT 99500-94250;
+ ?column? 
+----------
+     5250
+(1 row)
+
+flightinformation=> SELECT AVG(SALARY) FROM EMPLOYEES EXCEPT (SELECT AVG(SALARY) FROM EMPLOYEES,CERTIFIED WHERE EMPLOYEES.EID=CERTIFIED.EID);
+        avg         
+--------------------
+ 99500.000000000000
+(1 row)
+
+
+ SELECT AVG(SALARY) FROM EMPLOYEES,CERTIFIED WHERE EMPLOYEES.EID=CERTIFIED.EID;
+        avg         
+--------------------
+ 94250.000000000000
+(1 row)SELECT ENAME,COUNT(*) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID  group by ENAME;
+   ename    | count 
+------------+-------
+ MARTIN     |     2
+ SACHIN     |     6
+ VISWASH    |     4
+ RATAN      |     1
+ VAIBHAV    |     4
+ DENIAL     |     1
+ ABHINANDAN |     2
+(7 rows)
+
+
+flightinformation=> SELECT AVG(SALARY) FROM EMPLOYEES;
+        avg         
+--------------------
+ 99500.000000000000
+(1 row)
+
+SELECT ENAME,SALARY FROM EMPLOYEES WHERE SALARY > (SELECT AVG(SALARY) FROM EMPLOYEES,CERTIFIED WHERE EMPLOYEES.EID=CERTIFIED.EID);
+   ename    | salary 
+------------+--------
+ MARTIN     | 100000
+ DENIAL     | 100000
+ ABHINANDAN | 200000
+ SHIVANI    | 100000
+ SHRISHTI   | 120000
+(5 rows)
+
+SELECT ENAME,COUNT(*) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID  group by ENAME;
+   ename    | count 
+------------+-------
+ MARTIN     |     2
+ SACHIN     |     6
+ VISWASH    |     4
+ RATAN      |     1
+ VAIBHAV    |     4
+ DENIAL     |     1
+ ABHINANDAN |     2
+(7 rows)
+
+SELECT ENAME,COUNT(ANAME) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID  group by ENAME HAVING COUNT(ANAME)>3
+flightinformation-> ;
+  ename  | count 
+---------+-------
+ SACHIN  |     6
+ VISWASH |     4
+ VAIBHAV |     4
+(3 rows)
+
+flightinformation=> SELECT EMPLOYEES.EID,COUNT(ANAME) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID  group by EMPLOYEES.EID HAVING COUNT(ANAME)>3
+;
+ eid | count 
+-----+-------
+ 102 |     6
+ 101 |     4
+ 105 |     4
+(3 rows)
+
+
+
