@@ -1,38 +1,82 @@
+
+
+
+
 A. Find the names of aircraft such that all pilots certified to operate them earn
 more than $80,000.
 
 
-SELECT ANAME,count(ename) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID and salary>80000 group by ANAME HAVING COUNT(ENAME)>3;
-   aname   | count 
------------+-------
- sukhoi su |     5
- F-16      |     5
-(2 rows)
+SELECT DISTINCT ANAME FROM AIRCRAFT WHERE AID IN (SELECT C.AID FROM CERTIFIED C, EMPLOYEES E WHERE C.EID=E.EID  AND NOT EXISTS(SELECT * FROM EMPLOYEES E1 WHERE E1.EID=E.EID AND E1.SALARY<80000));
+     aname      
+----------------
+ BOEING C20
+ MIG-21
+ sukhoi su
+ F-16
+ AIRBUS A-333
+ BOEING C17
+ dasault rafale
+ BOEING 777
+(8 rows)
+
+
 
 
 
 B.. For each pilot who is certified for more than three aircraft, find the eid and the
 maximum cruisingrange of the aircraft for which she or he is certified.
 
-SELECT ENAME,COUNT(ANAME) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID  group by ENAME HAVING COUNT(ANAME)>3
-flightinformation-> ;
-  ename  | count 
----------+-------
- SACHIN  |     6
- VISWASH |     4
- VAIBHAV |     4
+ SELECT C.EID ,MAX(A.CRUISERANGE) FROM CERTIFIED C, AIRCRAFT A WHERE C.AID=A.AID GROUP BY C.EID HAVING COUNT(*)>3;
+ eid | max  
+-----+------
+ 101 | 1200SELECT ENAME,CRUISERANGE,ANAME FROM EMPLOYEES E,CERTIFIED C,AIRCRAFT A WHERE E.EID=C.EID AND a.AID=c.AID AND ANAME NOT LIKE'BOEING%' AND CRUISERANGE>3000;
+   ename    | cruiserange | aname  
+------------+-------------+--------
+ MARTIN     |        4500 | F-16
+ RATAN      |        5000 | MIG-21
+ ABHINANDAN |        4500 | F-16
+ MARTIN     |        4500 | F-16
+ SHIVANI    |        4500 | F-16
+ SHRISHTI   |        4500 | F-16
+ RATAN      |        4500 | F-16
+(7 rows)
+
+ 104 | 4500
+ 105 | 1200
+ 102 | 1800
+(4 rows)
+
+
+c. Find the names of pilots whose salary is less than the price of the cheapest
+route from Los Angeles to Honolulu.
+
+
+ select  ename from employees where salary> (select min(price) from flights where source ='LOS ANGELES' AND DESTINATION='HONOLULU');
+   ename    
+------------
+ VAIBHAV
+ SACHIN
+ RATAN
+ MARTIN
+ VISWASH
+ DENIAL
+ ABHINANDAN
+ MURTI
+ SHIVANI
+ SHRISHTI
+ SUMAN
+(11 rows)
+
+
+D.For all aircraft with cruisingrange over 1000 miles, find the name of the aircraft and the average salary of all pilots certified for this aircraft?
+
+SELECT ANAME,avg(salary) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID AND cruiserange>1000 group by aname;
+   aname    |        avg         
+------------+--------------------
+ BOEING C20 | 80000.000000000000
+ BOEING C17 | 77500.000000000000
+ MIG-29     | 70000.000000000000
 (3 rows)
-
-SELECT EMPLOYEES.EID,COUNT(ANAME) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID  group by EMPLOYEES.EID HAVING COUNT(ANAME)>3
-;
- eid | count 
------+-------
- 102 |     6
- 101 |     4
- 105 |     4
-(3 rows)
-
-
 
 
 E.Find the name of pilots certified with some boeing aircraft?
@@ -49,27 +93,32 @@ E.Find the name of pilots certified with some boeing aircraft?
  SACHIN     | BOEING C17
 (7 rows)
 
-D.For all aircraft with cruisingrange over 1000 miles, find the name of the aircraft and the average salary of all pilots certified for this aircraft?
 
-SELECT ANAME,avg(salary) FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID AND cruiserange>1000 group by aname;
-   aname    |        avg         
-------------+--------------------
- BOEING C20 | 80000.000000000000
- BOEING C17 | 77500.000000000000
- MIG-29     | 70000.000000000000
-(3 rows)
+F. Find the aids of all aircraft that can be used on routes from Los Angeles to
+Chicago.
+
+ SELECT A.AID ,A.ANAME FROM AIRCRAFT A,FLIGHTS F WHERE A.AID=F.AID AND SOURCE='LOS ANGELES' AND DESTINATION='CHICAGO';
+ aid |     aname      
+-----+----------------
+   4 | dasault rafale
+(1 row)
 
 
 H.Print the enames of pilots who can operate planes with cruisingrange greater
 than 3000 miles but are not certified on any Boeing aircraft?
 
- SELECT ENAME,CRUISERANGE,ANAME FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID AND ANAME NOT LIKE'BOEING%' AND CRUISERANGE>3000;
+ SELECT ENAME,CRUISERANGE,ANAME FROM EMPLOYEES E,CERTIFIED C,AIRCRAFT A WHERE E.EID=C.EID AND a.AID=c.AID AND ANAME NOT LIKE'BOEING%' AND CRUISERANGE>3000;
    ename    | cruiserange | aname  
 ------------+-------------+--------
  MARTIN     |        4500 | F-16
  RATAN      |        5000 | MIG-21
  ABHINANDAN |        4500 | F-16
-(3 rows)
+ MARTIN     |        4500 | F-16
+ SHIVANI    |        4500 | F-16
+ SHRISHTI   |        4500 | F-16
+ RATAN      |        4500 | F-16
+(7 rows)
+
 
 J. Compute the difference between the average salary of a pilot and the average
 salary of all employees (including pilots).
@@ -82,7 +131,7 @@ SELECT AVG(SALARY) FROM EMPLOYEES EXCEPT SELECT AVG(SALARY) FROM EMPLOYEES,CERTI
 (1 row)
 
 
-k. Print the name and salary of every nonpilot whose salary is more than the
+K. Print the name and salary of every nonpilot whose salary is more than the
 average salary for pilots.
 
 
@@ -93,12 +142,31 @@ select ename ,SALARY from employees where eid!= ALL (select eid from certified) 
 (1 row)
 
 
-f. Find the aids of all aircraft that can be used on routes from Los Angeles to
-Chicago.
 
- SELECT AIRCRAFT.AID ,ANAME FROM AIRCRAFT,FLIGHTS WHERE AIRCRAFT.AID=FLIGHTS.AID AND SOURCE='LOS ANGELES' AND DESTINATION='CHICAGO';
- aid |   aname   
------+-----------
-   3 | sukhoi su
+
+
+L. Print the names of employees who are certified only on aircrafts with cruising
+range longer than 1000 miles
+
+ SELECT ENAME FROM EMPLOYEES E,AIRCRAFT A,CERTIFIED C WHERE C.AID=A.AID AND E.EID=C.EID GROUP BY ENAME HAVING EVERY(CRUISERANGE>3000);
+  ename   
+----------
+ RATAN
+ SHRISHTI
+(2 rows)
+
+
+
+M. Print the names of employees who are certified only on aircrafts with cruising
+range longer than 1000 miles, but on at least two such aircrafts.
+
+ SELECT ENAME FROM EMPLOYEES E,AIRCRAFT A,CERTIFIED C WHERE C.AID=A.AID AND E.EID=C.EID GROUP BY ENAME HAVING EVERY(CRUISERANGE>3000) and count(*)>1;
+ ename 
+-------
+ RATAN
 (1 row)
+
+
+N. Print the names of employees who are certified only on aircrafts with cruising
+  range longer than 1000 miles and who are certified on some Boeing aircraft.
 

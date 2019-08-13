@@ -1,3 +1,28 @@
+ SELECT ENAME,CRUISERANGE,ANAME FROM EMPLOYEES E,CERTIFIED C,AIRCRAFT A WHERE E.EID=C.EID AND a.AID=c.AID AND ANAME NOT LIKE'BOEING%' AND CRUISERANGE>3000;
+   ename    | cruiserange | aname  
+------------+-------------+--------
+ MARTIN     |        4500 | F-16
+ RATAN      |        5000 | MIG-21
+ ABHINANDAN |        4500 | F-16
+ MARTIN     |        4500 | F-16
+ SHIVANI    |        4500 | F-16
+ SHRISHTI   |        4500 | F-16
+ RATAN      |        4500 | F-16
+(7 rows)
+SELECT ENAME,CRUISERANGE,ANAME FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID AND ANAME NOT LIKE'BOEING%' AND CRUISERANGE>3000;
+   ename    | cruiserange | aname  
+------------+-------------+--------
+ MARTIN     |        4500 | F-16
+ RATAN      |        5000 | MIG-21
+ ABHINANDAN |        4500 | F-16
+ MARTIN     |        4500 | F-16
+ SHIVANI    |        4500 | F-16
+ SHRISHTI   |        4500 | F-16
+ RATAN      |        4500 | F-1 SELECT ENAME FROM EMPLOYEES E,AIRCRAFT A,CERTIFIED C WHERE C.AID=A.AID AND E.EID=C.EID AND A.ANAME LIKE 'BOEING%' GROUP BY ENAME HAVING EVERY(CRUISERANGE>3000)
+flightinformation-> ;
+ ename 
+-------
+(0 rows)
 1832  lsb_release -a
  1833  sudo vi /etc/apt/sources.list.d/pgdg.list and add a line for the repository
  1834  sudo vi /etc/apt/sources.list.d/pgdg.list
@@ -22,7 +47,12 @@
  1853  plsql
  1854  sudo ufw default allow
  1855  sudo ufw status
- 1856  sudo ufw enable
+ 1856  sudo ufw enable SELECT ENAME FROM EMPLOYEES E,AIRCRAFT A,CERTIFIED C WHERE C.AID=A.AID AND E.EID=C.EID AND A.ANAME LIKE 'BOEING%' GROUP BY ENAME HAVING EVERY(CRUISERANGE>3000)
+flightinformation-> ;
+ ename 
+-------
+(0 rows)
+
  1857  sudo ufw status
  1858  sudo ufw status numbered
  1859  sudo su postgres
@@ -32,7 +62,23 @@
  1863  su postgres
  1864  sudo apt-get --purge remove postgresql
  1865  dpkg -l | grep postgres
- 1866  sudo apt-get --purge remove postgresql postgresql-doc postgresql-common
+ 1866  sudo apt-get --purge remove postgresql postgresql-doc postgre SELECT ENAME,CRUISERANGE,ANAME FROM EMPLOYEES E,CERTIFIED C,AIRCRAFT A WHERE E.EID=C.EID AND a.AID=c.AID AND ANAME NOT LIKE'BOEING%' AND CRUISERANGE>3000;
+   ename    | cruiserange | aname  
+------------+-------------+--------
+ MARTIN     |        4500 | F-16
+ RATAN      |        5000 | MIG-21
+ ABHINANDAN |        4500 | F-16
+ MARTIN     |        4500 | F-16
+ SHIVANI    |        4500 | F-16
+ SHRISHTI   |        4500 | F-16
+ RATAN      |        4500 | F-16
+(7 rows)
+sql-common SELECT ENAME FROM EMPLOYEES E,AIRCRAFT A,CERTIFIED C WHERE C.AID=A.AID AND E.EID=C.EID AND A.ANAME LIKE 'BOEING%' GROUP BY ENAME HAVING EVERY(CRUISERANGE>3000)
+flightinformation-> ;
+ ename 
+-------
+(0 rows)
+
  1867  clear
  1868  sudo apt-get update
  1869  sudo apt-get install postgresql postgresql-contrib
@@ -78,7 +124,12 @@
  1909  git status
  1910  clear
  1911  cd Desktop/set/
- 1912  git status
+ 1912  git status SELECT ENAME FROM EMPLOYEES E,AIRCRAFT A,CERTIFIED C WHERE C.AID=A.AID AND E.EID=C.EID AND A.ANAME LIKE 'BOEING%' GROUP BY ENAME HAVING EVERY(CRUISERANGE>3000)
+flightinformation-> ;
+ ename 
+-------
+(0 rows)
+
  1913  ls 
  1914  git status
  1915  git pull origin master
@@ -151,7 +202,12 @@ flightinformation=> SELECT * FROM FLIGHTS;
 (5 rows)
 
 
-CREATE TABLE AIRCRAFT(AID INT PRIMARY KEY,ANAME TEXT NOT NULL,CRUISERANGE INT);
+CREATE TABLE AIRCRAFT(AID INT PRIMARY KEY,ANAME TEXT N SELECT ENAME FROM EMPLOYEES E,AIRCRAFT A,CERTIFIED C WHERE C.AID=A.AID AND E.EID=C.EID AND A.ANAME LIKE 'BOEING%' GROUP BY ENAME HAVING EVERY(CRUISERANGE>3000)
+flightinformation-> ;
+ ename 
+-------
+(0 rows)
+OT NULL,CRUISERANGE INT);
 CREATE TABLE
 flightinformation=> SELECT * FROM AIRCRAFT;
  aid | aname | cruiserange 
@@ -271,7 +327,12 @@ flightinformation=> SELECT * FROM AIRCRAFT;
 (7 rows)
 
 flightinformation=> SELECT ENAME ,ANAME FROM EMPLOYEES,CERTIFIED,AIRCRAFT WHERE EMPLOYEES.EID=CERTIFIED.EID AND AIRCRAFT.AID=CERTIFIED.AID AND ANAME='BOING';
-  ename  | aname 
+  ename  | aname  SELECT ENAME FROM EMPLOYEES E,AIRCRAFT A,CERTIFIED C WHERE C.AID=A.AID AND E.EID=C.EID AND A.ANAME LIKE 'BOEING%' GROUP BY ENAME HAVING EVERY(CRUISERANGE>3000)
+flightinformation-> ;
+ ename 
+-------
+(0 rows)
+
 ---------+-------
  VAIBHAV | BOING
 (1 row)
@@ -389,7 +450,12 @@ flightinformation=> SELECT AVG(SALARY) FROM EMPLOYEES EXCEPT (SELECT AVG(SALARY)
 
 
 flightinformation=> SELECT AVG(SALARY) FROM EMPLOYEES;
-        avg         
+        avg          SELECT ENAME FROM EMPLOYEES E,AIRCRAFT A,CERTIFIED C WHERE C.AID=A.AID AND E.EID=C.EID AND A.ANAME LIKE 'BOEING%' GROUP BY ENAME HAVING EVERY(CRUISERANGE>3000)
+flightinformation-> ;
+ ename 
+-------
+(0 rows)
+
 --------------------
  99500.000000000000
 (1 row)
