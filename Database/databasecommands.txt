@@ -498,7 +498,7 @@ flightinformation=> SELECT EMPLOYEES.EID,COUNT(ANAME) FROM EMPLOYEES,CERTIFIED,A
  102 |     6
  101 |     4
  105 |     4
-(3 rows)
+
 
 
 

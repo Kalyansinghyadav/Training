@@ -1,3 +1,63 @@
+cd ~
+ 1939  cd Desktop/
+ 1940  ls
+ 1941  cat -b c.html
+ 1942  less c.html
+ 1943  grep c.html
+ 1944  grep this c.html
+ 1945  grep wwf c.html
+ 1946  wc c.html
+ 1947  cp home/beryl/Desktop/c.html /home/beryl/Desktop/example/
+ 1948  cp /home/beryl/Desktop/c.html /home/beryl/Desktop/example/
+ 1949  cd example/
+ 1950  ls
+ 1951  cp  /home/beryl/Desktop/{4.txt,5.txt,6.txt} /home/beryl/Desktop/example/
+ 1952  ls
+ 1953  cp  /home/beryl/Desktop/abc  /home/beryl/Desktop/example/
+ 1954  cp -r /home/beryl/Desktop/abc  /home/beryl/Desktop/example/
+ 1955  ls
+ 1956  mv example example2
+ 1957  cd ..
+ 1958  ls
+ 1959  mv abc abc1
+ 1960  ls
+ 1961  rm 4.txt
+ 1962  ls
+ 1963  cd -
+ 1964  cd ..
+ 1965  mv 5.txt 9.txt
+ 1966  ls
+ 1967  ls -a
+ 1968  ls -l
+ 1969  ls -lh
+ 1970  ls -d
+ 1971  ls -d */
+ 1972  ls -n
+ 1973  ls -g
+ 1974  ls -li
+ 1975  ls -p
+ 1976  ls -r
+ 1977  ls -R
+ 1978  ls -lx
+ 1979  ls -lt
+ 1980  ls ~
+ 1981  ls ../
+ 1982  ls --version
+ 1983  vi sample.txt
+ 1984  U
+ 1985  vi sample.txt
+ 1986  cls
+ 1987  ls
+ 1988  cp 6.txt /home/beryl/abc1
+ 1989  ls
+ 1990  cd abc1
+ 1991  ls
+ 1992  cp 6.txt /home/beryl/Desktop/abc1
+ 1993  cd ..
+ 1994  cp 6.txt /home/beryl/Desktop/abc1
+ 1995  cd abc1
+ 1996  ls
+ 1997  cd ~
  1601  chmod 754 root.html
  1602  ls -l
  1603  clear
