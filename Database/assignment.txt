@@ -29,18 +29,7 @@ maximum cruisingrange of the aircraft for which she or he is certified.
  SELECT C.EID ,MAX(A.CRUISERANGE) FROM CERTIFIED C, AIRCRAFT A WHERE C.AID=A.AID GROUP BY C.EID HAVING COUNT(*)>3;
  eid | max  
 -----+------
- 101 | 1200SELECT ENAME,CRUISERANGE,ANAME FROM EMPLOYEES E,CERTIFIED C,AIRCRAFT A WHERE E.EID=C.EID AND a.AID=c.AID AND ANAME NOT LIKE'BOEING%' AND CRUISERANGE>3000;
-   ename    | cruiserange | aname  
-------------+-------------+--------
- MARTIN     |        4500 | F-16
- RATAN      |        5000 | MIG-21
- ABHINANDAN |        4500 | F-16
- MARTIN     |        4500 | F-16
- SHIVANI    |        4500 | F-16
- SHRISHTI   |        4500 | F-16
- RATAN      |        4500 | F-16
-(7 rows)
-
+ 101 | 1200 
  104 | 4500
  105 | 1200
  102 | 1800
