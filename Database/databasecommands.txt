@@ -397,8 +397,8 @@ flightinformation=> SELECT AVG(SALARY) FROM EMPLOYEES;
 SELECT ENAME,SALARY FROM EMPLOYEES WHERE SALARY > (SELECT AVG(SALARY) FROM EMPLOYEES,CERTIFIED WHERE EMPLOYEES.EID=CERTIFIED.EID);
    ename    | salary 
 ------------+--------
- MARTIN     | 100000
- DENIAL     | 100000
+ MARTIN     | 100000  puts "You are not eligible to vote."   
+ DENIAL     | 100000  puts "You are not eligible to vote."   
  ABHINANDAN | 200000
  SHIVANI    | 100000
  SHRISHTI   | 120000
