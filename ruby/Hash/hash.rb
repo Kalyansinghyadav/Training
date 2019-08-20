@@ -4,3 +4,5 @@ puts data[1]
  puts data[2]
 puts data[3]
 puts data["ajay"]
+
+puts data

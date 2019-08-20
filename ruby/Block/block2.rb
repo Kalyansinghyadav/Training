@@ -1,4 +1,5 @@
 def met(&block)
+	   block.call
     puts "this is a method"
     block.call
     end

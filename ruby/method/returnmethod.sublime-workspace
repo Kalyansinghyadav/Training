@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"na",
+				"name_age"
+			],
+			[
+				"wh",
+				"while\twhile ... end"
+			],
+			[
 				"object",
 				"object_id"
 			],
@@ -506,14 +514,6 @@
 			[
 				"font",
 				"font-size\tproperty"
-			],
-			[
-				"l",
-				"li\tTag"
-			],
-			[
-				"u",
-				"ul\tTag"
 			]
 		]
 	},
@@ -572,16 +572,204 @@
 			"file": "/home/beryl/Desktop/Training1/ruby/Hash/hash.rb",
 			"settings":
 			{
-				"buffer_size": 117,
+				"buffer_size": 127,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/beryl/Desktop/Training1/ruby/conditionstatement/ternary.rb",
+			"file": "/home/beryl/Desktop/Training1/ruby/loops/for.rb",
 			"settings":
 			{
-				"buffer_size": 53,
-				"line_ending": "Unix"
+				"buffer_size": 202,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "for i in 0..5"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/loops/redo.rb",
+			"settings":
+			{
+				"buffer_size": 58,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "redo.rb"
+			}
+		},
+		{
+			"contents": "s1=\"abc\"\ns2=\"123\" \"xyz\"\ns3=s1+s2\nputs s3\nputs s2,s1\n\n\nmsg = \"this tutorial is from TutorialsPoint\"\n\nputs msg.length\nputs msg[\"tutorial\"]\n\nputs msg[0]\n \n puts msg[0,10], msg[5,msg.length]\n\n\n\n string = 'This is Example of String'\n\n puts string.reverse\n ",
+			"file": "/home/beryl/Desktop/Training1/ruby/string/str1.rb",
+			"file_size": 247,
+			"file_write_time": 132106811855105236,
+			"settings":
+			{
+				"buffer_size": 251,
+				"line_ending": "Unix",
+				"name": "s1=\"abc\""
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/string/str2.rb",
+			"settings":
+			{
+				"buffer_size": 167,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "str2"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/string/concatString.rb",
+			"settings":
+			{
+				"buffer_size": 290,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "concatString.rb"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/string/freez.rb",
+			"settings":
+			{
+				"buffer_size": 164,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "string = \"mutable string\""
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/string/StrMethods.rb",
+			"settings":
+			{
+				"buffer_size": 184,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "a = \"String Methods\""
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/loops/until.rb",
+			"settings":
+			{
+				"buffer_size": 173,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "$i=0"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/string/str3.rb",
+			"settings":
+			{
+				"buffer_size": 176,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "str4.rb"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/string/replace.rb",
+			"settings":
+			{
+				"buffer_size": 306,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "replace.rb"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/Arrays/arr1.rb",
+			"settings":
+			{
+				"buffer_size": 427,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "arr1.rb"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/Arrays/arr2.rb",
+			"settings":
+			{
+				"buffer_size": 242,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "arr2.rb"
+			}
+		},
+		{
+			"contents": "arr = [1,2,3,4,5,6,7]\n\narr1 = [1,2,[3,4,5],6,7,8,[9,10]]\n\nprint arr1\n\narr2 = [[1,3,5,7,9],[2,4,6,8]]\n\nprint arr2\n\nputs arr.include?(5)\n \nputs arr1.flatten\n\nputs arr.each_with_index {|v,id| puts \"#{id}. #{v}\"}\n\na =[2,5,8,2,8,7,3,9,1]\nprint a.sort\n\nputs arr.map{|e| e**2}\n\nprint a.select {|e| e>5}\n\n",
+			"file": "/home/beryl/Desktop/Training1/ruby/Arrays/arr3.rb",
+			"file_size": 295,
+			"file_write_time": 132107559975845932,
+			"settings":
+			{
+				"buffer_size": 297,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "arr = [1,2,3,4,5,6,7]"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/Arrays/iterat.rb",
+			"settings":
+			{
+				"buffer_size": 10,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "iterat.rb"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/iterator/iterator.rb",
+			"settings":
+			{
+				"buffer_size": 360,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "iterator.rb"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/Hash/hash1.rb",
+			"settings":
+			{
+				"buffer_size": 454,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "hash1.rb"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/Hash/option_param.rb",
+			"settings":
+			{
+				"buffer_size": 251,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "option_param.rb"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/Hash/hash3.rb",
+			"settings":
+			{
+				"buffer_size": 305,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "hash3.rb"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/Hash/hashmethod.rb",
+			"settings":
+			{
+				"buffer_size": 364,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "hashmethod.rb"
 			}
 		}
 	],
@@ -617,6 +805,11 @@
 	},
 	"file_history":
 	[
+		"/home/beryl/Desktop/Training1/ruby/loops/dowhile.rb",
+		"/home/beryl/Desktop/Training1/ruby/loops/while1.rb",
+		"/home/beryl/Desktop/Training1/ruby/conditionstatement/ternary.rb",
+		"/home/beryl/Desktop/Training1/ruby/loops/str3.rb",
+		"/home/beryl/Desktop/Training1/ruby/string/\\.rb",
 		"/home/beryl/Desktop/tarun/berylsystems-new-web/Gemfile",
 		"/home/beryl/Desktop/tarun/berylsystems-new-web/Dockerfile",
 		"/home/beryl/Desktop/tarun/berylsystems-new-web/docker-compose.yml",
@@ -739,12 +932,7 @@
 		"/home/beryl/Desktop/project/flight_case/app/views/customers/favourite_products.html.erb",
 		"/home/beryl/Desktop/project/flight_case/app/models/product.rb",
 		"/home/beryl/Desktop/project/flight_case/db/schema.rb",
-		"/home/beryl/Desktop/project/flight_case/db/migrate/20190423060249_add_foreign_key_in_product.rb",
-		"/home/beryl/Desktop/project/flight_case/db/migrate/20190423061917_rename_stencil_placementsand_set_default_in_boolean_types_to_false.rb",
-		"/home/beryl/Desktop/project/flight_case/db/migrate/20190423061020_rename_stencil_placementsand_set_default_in_boolean_types.rb",
-		"/home/beryl/Desktop/project/flight_case/app/controllers/customers_controller.rb",
-		"/home/beryl/Desktop/project/flight_case/app/views/customers/_navbar.html.erb",
-		"/home/beryl/Desktop/project/flight_case/config/routes.rb"
+		"/home/beryl/Desktop/project/flight_case/db/migrate/20190423060249_add_foreign_key_in_product.rb"
 	],
 	"find":
 	{
@@ -762,6 +950,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"size"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -779,7 +968,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -808,7 +997,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
@@ -837,7 +1026,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
@@ -866,7 +1055,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -895,7 +1084,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -911,64 +1100,8 @@
 						"selection":
 						[
 							[
-								255,
-								255
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/home/beryl/Desktop/Training1/ruby/Hash/hash.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 117,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/home/beryl/Desktop/Training1/ruby/conditionstatement/ternary.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 53,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								347,
+								347
 							]
 						],
 						"settings":
@@ -980,6 +1113,585 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/beryl/Desktop/Training1/ruby/Hash/hash.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 127,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								127,
+								127
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/beryl/Desktop/Training1/ruby/loops/for.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 202,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								13
+							]
+						],
+						"settings":
+						{
+							"auto_name": "for i in 0..5",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/beryl/Desktop/Training1/ruby/loops/redo.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 58,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								53,
+								53
+							]
+						],
+						"settings":
+						{
+							"auto_name": "redo.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/beryl/Desktop/Training1/ruby/string/str1.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 251,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								249,
+								249
+							]
+						],
+						"settings":
+						{
+							"auto_name": "s1=\"abc\"",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/home/beryl/Desktop/Training1/ruby/string/str2.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"auto_name": "str2",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/home/beryl/Desktop/Training1/ruby/string/concatString.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 290,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								288,
+								288
+							]
+						],
+						"settings":
+						{
+							"auto_name": "concatString.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/home/beryl/Desktop/Training1/ruby/string/freez.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 164,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								164,
+								164
+							]
+						],
+						"settings":
+						{
+							"auto_name": "string = \"mutable string\"",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/home/beryl/Desktop/Training1/ruby/string/StrMethods.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								183,
+								183
+							]
+						],
+						"settings":
+						{
+							"auto_name": "a = \"String Methods\"",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/home/beryl/Desktop/Training1/ruby/loops/until.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								169,
+								169
+							]
+						],
+						"settings":
+						{
+							"auto_name": "$i=0",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/home/beryl/Desktop/Training1/ruby/string/str3.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 176,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								175
+							]
+						],
+						"settings":
+						{
+							"auto_name": "str4.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/home/beryl/Desktop/Training1/ruby/string/replace.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								305,
+								305
+							]
+						],
+						"settings":
+						{
+							"auto_name": "replace.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/home/beryl/Desktop/Training1/ruby/Arrays/arr1.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 427,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								408,
+								408
+							]
+						],
+						"settings":
+						{
+							"auto_name": "arr1.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/home/beryl/Desktop/Training1/ruby/Arrays/arr2.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								242,
+								242
+							]
+						],
+						"settings":
+						{
+							"auto_name": "arr2.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/home/beryl/Desktop/Training1/ruby/Arrays/arr3.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 297,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								297,
+								297
+							]
+						],
+						"settings":
+						{
+							"auto_name": "arr = [1,2,3,4,5,6,7]",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "/home/beryl/Desktop/Training1/ruby/Arrays/iterat.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10,
+								10
+							]
+						],
+						"settings":
+						{
+							"auto_name": "iterat.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "/home/beryl/Desktop/Training1/ruby/iterator/iterator.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								335,
+								335
+							]
+						],
+						"settings":
+						{
+							"auto_name": "iterator.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "/home/beryl/Desktop/Training1/ruby/Hash/hash1.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								454,
+								454
+							]
+						],
+						"settings":
+						{
+							"auto_name": "hash1.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "/home/beryl/Desktop/Training1/ruby/Hash/option_param.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 251,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								248,
+								248
+							]
+						],
+						"settings":
+						{
+							"auto_name": "option_param.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "/home/beryl/Desktop/Training1/ruby/Hash/hash3.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 305,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								304,
+								304
+							]
+						],
+						"settings":
+						{
+							"auto_name": "hash3.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "/home/beryl/Desktop/Training1/ruby/Hash/hashmethod.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 364,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								364,
+								364
+							]
+						],
+						"settings":
+						{
+							"auto_name": "hashmethod.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
