@@ -1,4 +1,4 @@
-arr = ["a","b","c","d"]
+arr = "a","b","c","d"
 
 puts arr.join
 
