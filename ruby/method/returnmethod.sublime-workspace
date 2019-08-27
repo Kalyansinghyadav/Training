@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"ra",
+				"radius"
+			],
+			[
 				"na",
 				"name_age"
 			],
@@ -510,10 +514,6 @@
 			[
 				"text-a",
 				"text-align\tproperty"
-			],
-			[
-				"font",
-				"font-size\tproperty"
 			]
 		]
 	},
@@ -537,15 +537,6 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "def sample (*test)"
-			}
-		},
-		{
-			"contents": "a = gets\n",
-			"settings":
-			{
-				"buffer_size": 9,
-				"line_ending": "Unix",
-				"name": "a = gets"
 			}
 		},
 		{
@@ -636,13 +627,13 @@
 			}
 		},
 		{
-			"contents": "#Dir.mkdir(\"newdir\")\n\n#Dir.mkdir(\"mydir1\",756)\nir.delete(\"mydir1\")",
+			"contents": "#Dir.mkdir(\"newdir\")\n\n#Dir.mkdir(\"mydir1\",756)\nDir.delete(\"mydir1\")",
 			"file": "/home/beryl/Desktop/Training1/ruby/IO/dir2.rb",
 			"file_size": 67,
 			"file_write_time": 132109545243600163,
 			"settings":
 			{
-				"buffer_size": 66,
+				"buffer_size": 67,
 				"line_ending": "Unix",
 				"name": "dir2.rb"
 			}
@@ -868,11 +859,13 @@
 			}
 		},
 		{
+			"contents": "require 'date'\nd=DateTime.parse(\"2019-8-21 06:15:20+5.40\")\nputs d.hour\nputs d.min\nputs d.sec\nputs d.offset\nputs d.zone\n puts d.strftime('%I:%M:%S %p')\n\n\n\nclass Employee\n  def test\n    if a == 5\n      jkfkfk\n\n    else\n      kjkfllkd\n      [1,2,3].each do |a|\n\n      end\n    end\n  end\n\nend",
 			"file": "/home/beryl/Desktop/Training1/ruby/date/datetime.rb",
+			"file_size": 150,
+			"file_write_time": 132108663293892147,
 			"settings":
 			{
-				"buffer_size": 150,
-				"encoding": "UTF-8",
+				"buffer_size": 287,
 				"line_ending": "Unix"
 			}
 		},
@@ -900,10 +893,26 @@
 			"file": "/home/beryl/Desktop/Training1/ruby/loops/redo.rb",
 			"settings":
 			{
-				"buffer_size": 58,
+				"buffer_size": 62,
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "redo.rb"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/rails/first_app/db/seeds.rb",
+			"settings":
+			{
+				"buffer_size": 370,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/rails/first_app/config/environments/development.rb",
+			"settings":
+			{
+				"buffer_size": 2243,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -1035,6 +1044,50 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix",
 				"name": "replace.rb"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/variable/insvar.rb",
+			"settings":
+			{
+				"buffer_size": 283,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/OOPs/accessor.rb",
+			"settings":
+			{
+				"buffer_size": 293,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "class Circle"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/OOPs/setter.rb",
+			"settings":
+			{
+				"buffer_size": 407,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/beryl/Desktop/Training1/ruby/OOPs/setter1.rb",
+			"settings":
+			{
+				"buffer_size": 556,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "setter1.rb"
 			}
 		},
 		{
@@ -1285,7 +1338,7 @@
 	"groups":
 	[
 		{
-			"selected": 15,
+			"selected": 40,
 			"sheets":
 			[
 				{
@@ -1314,7 +1367,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 47,
 					"type": "text"
 				},
 				{
@@ -1343,39 +1396,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 50,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9,
-								9
-							]
-						],
-						"settings":
-						{
-							"auto_name": "a = gets",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 49,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "/home/beryl/Desktop/Training1/ruby/Block/block1.rb",
 					"semi_transient": false,
 					"settings":
@@ -1400,11 +1425,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 53,
+					"stack_index": 62,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "/home/beryl/Desktop/Training1/ruby/Block/&block.rb",
 					"semi_transient": false,
 					"settings":
@@ -1429,11 +1454,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 52,
+					"stack_index": 61,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "/home/beryl/Desktop/Training1/ruby/Block/block2.rb",
 					"semi_transient": false,
 					"settings":
@@ -1457,11 +1482,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 51,
+					"stack_index": 60,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "/home/beryl/Desktop/Training1/ruby/Hash/hash.rb",
 					"semi_transient": false,
 					"settings":
@@ -1485,11 +1510,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 54,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "/home/beryl/Desktop/Training1/ruby/loops/for.rb",
 					"semi_transient": false,
 					"settings":
@@ -1518,7 +1543,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "/home/beryl/Desktop/Training1/ruby/Modules/module1.rb",
 					"semi_transient": false,
 					"settings":
@@ -1543,11 +1568,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "/home/beryl/Desktop/Training1/ruby/IO/file1.rb",
 					"semi_transient": false,
 					"settings":
@@ -1572,11 +1597,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "/home/beryl/Desktop/Training1/ruby/IO/file2.rb",
 					"semi_transient": false,
 					"settings":
@@ -1600,11 +1625,11 @@
 						"translation.y": 22.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "/home/beryl/Desktop/Training1/ruby/IO/dir.rb",
 					"semi_transient": false,
 					"settings":
@@ -1629,24 +1654,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 11,
 					"file": "/home/beryl/Desktop/Training1/ruby/IO/dir2.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 66,
+						"buffer_size": 67,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								47,
-								47
+								48,
+								48
 							]
 						],
 						"settings":
@@ -1662,7 +1687,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 12,
 					"file": "/home/beryl/Desktop/Training1/ruby/Exceptions/begin.rb",
 					"semi_transient": false,
 					"settings":
@@ -1687,11 +1712,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 13,
 					"file": "/home/beryl/Desktop/Training1/ruby/Exceptions/rescue1.rb",
 					"semi_transient": false,
 					"settings":
@@ -1716,11 +1741,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 14,
 					"file": "/home/beryl/Desktop/Training1/ruby/Exceptions/symbol1.rb",
 					"semi_transient": false,
 					"settings":
@@ -1745,11 +1770,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 15,
 					"file": "/home/beryl/Desktop/Training1/ruby/Exceptions/Exceptions.txt",
 					"semi_transient": false,
 					"settings":
@@ -1776,11 +1801,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 16,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1803,11 +1828,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 17,
 					"file": "/home/beryl/Desktop/Training1/ruby/IO/file3.rb",
 					"semi_transient": false,
 					"settings":
@@ -1832,11 +1857,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 35,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 18,
 					"file": "/home/beryl/Desktop/Training1/ruby/Modules/module.rb",
 					"semi_transient": false,
 					"settings":
@@ -1861,11 +1886,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 40,
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 19,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/fibonacci.rb",
 					"semi_transient": false,
 					"settings":
@@ -1890,11 +1915,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 48,
+					"stack_index": 59,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 20,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/prime.rb",
 					"semi_transient": false,
 					"settings":
@@ -1919,11 +1944,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 21,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/primes.rb",
 					"semi_transient": false,
 					"settings":
@@ -1949,11 +1974,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 22,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/Armstrong.rb",
 					"semi_transient": false,
 					"settings":
@@ -1978,11 +2003,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 47,
+					"stack_index": 58,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 23,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/palindrome.rb",
 					"semi_transient": false,
 					"settings":
@@ -2008,11 +2033,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 46,
+					"stack_index": 57,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 24,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/pattern1.rb",
 					"semi_transient": false,
 					"settings":
@@ -2037,11 +2062,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 44,
+					"stack_index": 55,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 25,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/pattern2.rb",
 					"semi_transient": false,
 					"settings":
@@ -2065,11 +2090,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 26,
 					"file": "/home/beryl/Desktop/Training1/ruby/IO/data.rb",
 					"semi_transient": false,
 					"settings":
@@ -2094,11 +2119,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 41,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 27,
 					"file": "/home/beryl/Desktop/Training1/ruby/IO/filemethods.rb",
 					"semi_transient": false,
 					"settings":
@@ -2122,11 +2147,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 42,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
+					"buffer": 28,
 					"semi_transient": false,
 					"settings":
 					{
@@ -2150,11 +2175,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 43,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 29,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/pattern4.rb",
 					"semi_transient": false,
 					"settings":
@@ -2178,11 +2203,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 42,
+					"stack_index": 54,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 30,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/s1.rb",
 					"semi_transient": false,
 					"settings":
@@ -2207,11 +2232,11 @@
 						"translation.y": 2112.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 46,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 31,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/s2.rb",
 					"semi_transient": false,
 					"settings":
@@ -2235,11 +2260,11 @@
 						"translation.y": 2053.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 45,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 32,
 					"file": "/home/beryl/Desktop/Training1/ruby/date/date1.rb",
 					"semi_transient": false,
 					"settings":
@@ -2264,11 +2289,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 40,
+					"stack_index": 53,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
+					"buffer": 33,
 					"file": "/home/beryl/Desktop/Training1/ruby/date/time.rb",
 					"semi_transient": false,
 					"settings":
@@ -2293,11 +2318,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 52,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
+					"buffer": 34,
 					"file": "/home/beryl/Desktop/Training1/ruby/date/date2.rb",
 					"semi_transient": false,
 					"settings":
@@ -2322,24 +2347,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 51,
 					"type": "text"
 				},
 				{
-					"buffer": 36,
+					"buffer": 35,
 					"file": "/home/beryl/Desktop/Training1/ruby/date/datetime.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 150,
+						"buffer_size": 287,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								143,
-								143
+								268,
+								268
 							]
 						],
 						"settings":
@@ -2350,11 +2375,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 41,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
+					"buffer": 36,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/s3.rb",
 					"semi_transient": false,
 					"settings":
@@ -2378,11 +2403,11 @@
 						"translation.y": 1876.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 45,
+					"stack_index": 56,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
+					"buffer": 37,
 					"file": "/home/beryl/Desktop/Training1/ruby/Programs/pattern3.rb",
 					"semi_transient": false,
 					"settings":
@@ -2406,24 +2431,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 43,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 39,
+					"buffer": 38,
 					"file": "/home/beryl/Desktop/Training1/ruby/loops/redo.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 58,
+						"buffer_size": 62,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								53,
-								53
+								46,
+								46
 							]
 						],
 						"settings":
@@ -2435,11 +2460,67 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 57,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 39,
+					"file": "/home/beryl/Desktop/Training1/rails/first_app/db/seeds.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 370,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 40,
+					"file": "/home/beryl/Desktop/Training1/rails/first_app/config/environments/development.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2243,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 41,
 					"file": "/home/beryl/Desktop/Training1/ruby/string/str1.rb",
 					"semi_transient": false,
 					"settings":
@@ -2464,11 +2545,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 56,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 41,
+					"buffer": 42,
 					"file": "/home/beryl/Desktop/Training1/ruby/string/str2.rb",
 					"semi_transient": false,
 					"settings":
@@ -2493,11 +2574,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 55,
+					"stack_index": 63,
 					"type": "text"
 				},
 				{
-					"buffer": 42,
+					"buffer": 43,
 					"file": "/home/beryl/Desktop/Training1/ruby/string/concatString.rb",
 					"semi_transient": false,
 					"settings":
@@ -2522,11 +2603,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 43,
+					"buffer": 44,
 					"file": "/home/beryl/Desktop/Training1/ruby/string/freez.rb",
 					"semi_transient": false,
 					"settings":
@@ -2551,11 +2632,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 50,
 					"type": "text"
 				},
 				{
-					"buffer": 44,
+					"buffer": 45,
 					"file": "/home/beryl/Desktop/Training1/ruby/string/StrMethods.rb",
 					"semi_transient": false,
 					"settings":
@@ -2580,11 +2661,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 48,
 					"type": "text"
 				},
 				{
-					"buffer": 45,
+					"buffer": 46,
 					"file": "/home/beryl/Desktop/Training1/ruby/loops/until.rb",
 					"semi_transient": false,
 					"settings":
@@ -2609,11 +2690,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 46,
+					"buffer": 47,
 					"file": "/home/beryl/Desktop/Training1/ruby/Exceptions/catch2.rb",
 					"semi_transient": false,
 					"settings":
@@ -2638,11 +2719,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 47,
+					"buffer": 48,
 					"file": "/home/beryl/Desktop/Training1/ruby/Exceptions/raise_and_rescue.rb",
 					"semi_transient": false,
 					"settings":
@@ -2667,11 +2748,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 48,
+					"buffer": 49,
 					"file": "/home/beryl/Desktop/Training1/ruby/Exceptions/retry.rb",
 					"semi_transient": false,
 					"settings":
@@ -2696,11 +2777,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
-					"buffer": 49,
+					"buffer": 50,
 					"file": "/home/beryl/Desktop/Training1/ruby/Exceptions/else.rb",
 					"semi_transient": false,
 					"settings":
@@ -2725,11 +2806,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 50,
+					"buffer": 51,
 					"file": "/home/beryl/Desktop/Training1/ruby/Exceptions/catch1.rb",
 					"semi_transient": false,
 					"settings":
@@ -2754,11 +2835,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 51,
+					"buffer": 52,
 					"file": "/home/beryl/Desktop/Training1/ruby/string/str3.rb",
 					"semi_transient": false,
 					"settings":
@@ -2783,11 +2864,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 49,
 					"type": "text"
 				},
 				{
-					"buffer": 52,
+					"buffer": 53,
 					"file": "/home/beryl/Desktop/Training1/ruby/string/replace.rb",
 					"semi_transient": false,
 					"settings":
@@ -2799,8 +2880,8 @@
 						"selection":
 						[
 							[
-								305,
-								305
+								160,
+								160
 							]
 						],
 						"settings":
@@ -2812,11 +2893,156 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 53,
+					"buffer": 54,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 55,
+					"file": "/home/beryl/Desktop/Training1/ruby/variable/insvar.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 56,
+					"file": "/home/beryl/Desktop/Training1/ruby/OOPs/accessor.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"auto_name": "class Circle",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 57,
+					"file": "/home/beryl/Desktop/Training1/ruby/OOPs/setter.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								126,
+								126
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 58,
+					"file": "/home/beryl/Desktop/Training1/ruby/OOPs/setter1.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 556,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								556,
+								556
+							]
+						],
+						"settings":
+						{
+							"auto_name": "setter1.rb",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 72.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 59,
 					"file": "/home/beryl/Desktop/Training1/ruby/Arrays/arr1.rb",
 					"semi_transient": false,
 					"settings":
@@ -2838,14 +3064,14 @@
 							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 267.0,
+						"translation.y": 330.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 54,
+					"buffer": 60,
 					"file": "/home/beryl/Desktop/Training1/ruby/Arrays/arr2.rb",
 					"semi_transient": false,
 					"settings":
@@ -2870,11 +3096,11 @@
 						"translation.y": 375.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
-					"buffer": 55,
+					"buffer": 61,
 					"file": "/home/beryl/Desktop/Training1/ruby/Arrays/arr3.rb",
 					"semi_transient": false,
 					"settings":
@@ -2899,11 +3125,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 56,
+					"buffer": 62,
 					"file": "/home/beryl/Desktop/Training1/ruby/iterator/iterator.rb",
 					"semi_transient": false,
 					"settings":
@@ -2928,11 +3154,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 57,
+					"buffer": 63,
 					"file": "/home/beryl/Desktop/Training1/ruby/Hash/hash1.rb",
 					"semi_transient": false,
 					"settings":
@@ -2957,7 +3183,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 28,
 					"type": "text"
 				}
 			]
