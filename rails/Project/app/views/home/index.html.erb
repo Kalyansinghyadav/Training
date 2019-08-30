@@ -1,0 +1,36 @@
+<h1><%= @message %></h1>
+
+
+<table width="50%" cellpadding="3" cellspacing="3" border="3" bordercolor="black">
+	<caption><b>Employee Details<br></caption>
+   <tr>
+   	  <th>ID</th>
+   	  <th>Name</th>
+   	  <th>Contact</th>
+   	  <th>Address</th>
+   	</tr>
+  <% @employees.each do |employee| %>
+  	<tr>
+      <td><%= employee.id %></td>
+       <td><%= employee.name %></td>
+        <td><%= employee.contact_no %></td>
+         <td><%= employee.address %></td>
+    </tr>
+  <% end %>
+
+</table>
+<br>
+<br>
+<table width="30%" cellpadding="3" cellspacing="3" border="3" bordercolor="black">
+	<caption><b>Department Details<br></caption>
+   <tr>
+   	  <th>ID</th>
+   	  <th>Name</th>
+   </tr>
+  <% @departments.each do |department| %>
+  	<tr>
+      <td><%= department.id %></td>
+       <td><%= department.name %></td>        
+     </tr>
+  <% end %>
+</table>

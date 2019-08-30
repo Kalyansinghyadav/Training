@@ -1,12 +1,12 @@
 File.open("data.txt","w+") do |f|
 
-  f.puts "I am Kalyan"
-  f.write "I am from Spn\n"
-  f<<"I have Done MCA from AKTU\n"
-  f.close
-  end
+   f.puts "I am Kalyan"
+   f.write "I am from Spn\n"
+   f<<"I have Done MCA from AKTU\n"
+   f.close
+end
 
-	IO.foreach("data.txt") {|b| puts b}
+IO.foreach("data.txt") {|b| puts b}
 
   puts File.file?("data.txt")
 

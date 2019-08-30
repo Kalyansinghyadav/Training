@@ -24,5 +24,7 @@ sjh".each_line do|line|
 	puts line
 end
 puts "-------------------"
-b = arr.collect {|x| x*2}
+b = arr.collect {|x| x*2} 
 puts b
+puts
+print arr
