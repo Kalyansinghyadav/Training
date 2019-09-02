@@ -3,7 +3,7 @@ class CreateEmployees < ActiveRecord::Migration[6.0]
     create_table :employees do |t|
       t.string :name
       t.integer :contact
-      t.belongs_to :departments
+      t.refernces :department
 
       t.timestamps
     end
