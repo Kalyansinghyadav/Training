@@ -1,7 +1,10 @@
 Enter new student information
 <br>
 <%= form_for @student do |f| %>
-RollNo: <%= f.text_field :roll_no %><br />
-Name: <%= f.text_field :sname %><br />
-<%= f.submit%>
+RollNo: <%= f.text_field :roll_no %><br>
+<br>Name: <%= f.text_field :sname %><br>
+<br>DOB: <%= f.text_field :date_of_birth %><br>
+<br>Address: <%= f.text_field :address %><br>
+<br>Contact No: <%= f.text_field :contact_no %><br>
+<br><%= f.submit%>
 <% end %>

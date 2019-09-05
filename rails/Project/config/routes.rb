@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   get "/employees/:id" => "employees#show"
  
 
+  get "/students" => "students#index"
+  get "/students/edit/:id"  => "students#edit"
+  get "/students/destroy/:id"  => "students#destroy"
+
 end

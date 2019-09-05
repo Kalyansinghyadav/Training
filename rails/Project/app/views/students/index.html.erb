@@ -1,0 +1,28 @@
+
+
+<table width="50%" cellpadding="3" cellspacing="3" border="3" bordercolor="black">
+	<caption><b>Student Details<br></caption>
+   <tr>
+   	  <th>ID</th>
+   	  <th>Name</th>
+   	  <th>Roll no</th>
+      <th>StudentDetail</th>
+
+   	</tr>
+  <% @students.each do |student| %>
+  	<tr>
+      <td><%= student.id %></td>
+       <td><%= student.sname %></td>
+        <td><%= student.roll_no %></td>
+         <td>
+            <%= link_to "show","/students/#{student.id}" %>
+            <%= link_to "Edit","/students/edit/#{student.id}" %>
+             <%= link_to "Delete","/students/destroy/#{student.id}" %>
+         </td>
+    </tr>
+  <% end %>
+
+</table>
+<br>
+<br>
+<%= link_to "Create New Student","/students/new" %>
