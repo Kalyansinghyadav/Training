@@ -5,7 +5,7 @@ def promptAndGet(prompt)
    return res   
 end   
   
-catch :quitRequested do   
+  catch :quitRequested do   
    name = promptAndGet("Name: ")   
    age = promptAndGet("Occupation: ")   
    # ..   

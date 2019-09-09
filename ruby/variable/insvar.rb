@@ -1,15 +1,15 @@
 class States
+ 
+  def initialize(name)
 
-def initialize(name)
+    @statename=name
 
-@statename=name
+  end
+  def display()
 
-end
-def display()
+    puts "state name is #@statename"
 
-puts "state name is #@statename"
-
-end
+  end
 end
 
 # create object

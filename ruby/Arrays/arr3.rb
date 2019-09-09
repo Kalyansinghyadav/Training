@@ -14,7 +14,7 @@ puts arr1.flatten
 
 puts arr.each_with_index {|v,id| puts "#{id}. #{v}"}
 
-a =[2,5,8,2,8,7,3,9,1]
+  a =[2,5,8,2,8,7,3,9,1]
 print a.sort
 
 puts arr.map{|e| e**2}

@@ -6,12 +6,12 @@ puts string.gsub("dogs","cats")
 puts string.gsub("have","")
 
 puts string.count("a")
- puts string
- puts string.chomp("s")
+puts string
+puts string.chomp("s")
 
- puts "ruby"=="ruby"
- puts "java"=="Java"
- puts "ruby".casecmp"Ruby"
- puts "ruby".casecmp"ruby"
- puts "abc".eql? "abc"
- puts "abc".eql? "ABC"
+puts "ruby"=="ruby"
+puts "java"=="Java"
+puts "ruby".casecmp"Ruby"
+puts "ruby".casecmp"ruby"
+puts "abc".eql? "abc"
+puts "abc".eql? "ABC"

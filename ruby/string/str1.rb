@@ -12,8 +12,8 @@ puts msg["tutorial"]
 
 puts msg[0]
  
- puts msg[0,10], msg[5,msg.length]
+puts msg[0,10], msg[5,msg.length]
 
- string = 'This is Example of String'
+string = 'This is Example of String'
 
- puts string.reverse
+puts string.reverse
