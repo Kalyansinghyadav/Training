@@ -8,7 +8,7 @@ class User < ApplicationRecord
         has_one :payment
 
         def create_payment
-     	Payment.create(user:self,name:"ajay") if payment.nil?
+     	Payment.create(user:self,name:"online") if payment.nil?
      end
   
      def check_for_login
