@@ -1,0 +1,79 @@
+
+1.Find all doctors which names start with D.
+
+2.6.3 :007 > Doctor.where("name like ?","D%").pluck(:name)
+   (0.5ms)  SELECT "doctors"."name" FROM "doctors" WHERE (name like 'D%')
+ => ["Dhananjaya Seth", "Debu Mahto", "Dr. Piyush Goyal", "Dr. Rajesh Awasthi", "Dr. Shravan Kumar", "Dr. Neena Kappor", "Dr. Sanjeev Singh", "Dr. Parvindar Singh", "Dr. Naveen Rawat"] 
+2.6.3 :008 > 
+
+2.Find all doctors from each department.
+
+Department.joins(:doctors).select(:name).group(:name).count
+   (0.8ms)  SELECT COUNT("departments"."name") AS count_name, "departments"."name" AS departments_name FROM "departments" INNER JOIN "doctors" ON "doctors"."department_id" = "departments"."id" GROUP BY "departments"."name"
+ => {"Cardiologist"=>2, "Neurologist"=>1, "Pediatrician"=>2, "Physician"=>4, "Psychiatrist"=>1, "Surgeon"=>1} 
+2.6.3 :008 > 
+
+3. Find all patients for each doctor
+
+ Patient.joins(:doctors).select(:name).group(:name).count
+   (71.8ms)  SELECT COUNT("patients"."name") AS count_name, "patients"."name" AS patients_name FROM "patients" INNER JOIN "appointments" ON "appointments"."patient_id" = "patients"."id" INNER JOIN "doctors" ON "doctors"."id" = "appointments"."doctor_id" GROUP BY "patients"."name"
+ => {"Avanish "=>2, "Geeta"=>2, "Nidhi"=>1, "Rajesh"=>1, "Shruti"=>2} 
+
+4. Find all doctors for each Patient
+
+ Doctor.joins(:patients).select(:name).group(:name).count
+   (1.0ms)  SELECT COUNT("doctors"."name") AS count_name, "doctors"."name" AS doctors_name FROM "doctors" INNER JOIN "appointments" ON "appointments"."doctor_id" = "doctors"."id" INNER JOIN "patients" ON "patients"."id" = "appointments"."patient_id" GROUP BY "doctors"."name"
+ => {"Debu Mahto"=>1, "Dhananjaya Seth"=>1, "Dr. Neena Kappor"=>1, "Dr. Parvindar Singh"=>1, "Dr. Piyush Goyal"=>1, "Dr. Rajesh Awasthi"=>1, "Dr. Sanjeev Singh"=>2} 
+
+5.Find all Patient which age is less than 30.
+
+Patient.where("age<?",30).pluck(:name,:age)
+   (0.5ms)  SELECT "patients"."name", "patients"."age" FROM "patients" WHERE (age<30)
+ => [["Mahima", 15], ["Avanish ", 24], ["Vikas", 5], ["naman", 25], ["Rajesh", 3]] 
+2.6.3 :023 > 
+
+6.Patient.where.not("age<?",30).pluck(:name,:age)
+   (0.6ms)  SELECT "patients"."name", "patients"."age" FROM "patients" WHERE NOT (age<30)
+ => [["Nidhi", 35], ["Geeta", 45], ["Shruti", 35], ["adi", 35]] 
+2.6.3 :027 > 
+
+ 7.Patient.where("age<?",30).or(Patient.where("age>?",40)).pluck(:name,:age)
+
+   (0.6ms)  SELECT "patients"."name", "patients"."age" FROM "patients" WHERE ((age<30) OR (age>40))
+ => [["Geeta", 45], ["Mahima", 15], ["Avanish ", 24], ["Vikas", 5], ["naman", 25], ["Rajesh", 3]] 
+2.6.3 :028 > 
+
+ Patient.where("age>15").order(:age)
+  Patient Load (0.6ms)  SELECT "patients".* FROM "patients" WHERE (age>15) ORDER BY "patients"."age" ASC LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Patient id: 14, name: "Avanish ", address: "Shahjahanpur", contact: 987654000, age: 24, gender: "M", created_at: "2019-09-09 05:20:46", updated_at: "2019-09-10 10:06:03">, #<Patient id: 6, name: "naman", address: "bly", contact: 973473886458, age: 25, gender: "M", created_at: "2019-09-05 11:48:59", updated_at: "2019-09-10 10:06:52">, #<Patient id: 7, name: "Nidhi", address: "Delhi", contact: 978678666, age: 35, gender: "F", created_at: "2019-09-05 11:50:07", updated_at: "2019-09-05 11:50:07">, #<Patient id: 10, name: "Shruti", address: "Bareilly", contact: 9868678677, age: 35, gender: "F", created_at: "2019-09-05 13:09:56", updated_at: "2019-09-05 13:09:56">, #<Patient id: 15, name: "adi", address: "Delhi", contact: 77575757, age: 35, gender: "M", created_at: "2019-09-10 09:56:18", updated_at: "2019-09-10 10:06:37">, #<Patient id: 9, name: "Geeta", address: "Noida", contact: 9876347366, age: 45, gender: "F", created_at: "2019-09-05 13:07:57", updated_at: "2019-09-05 13:07:57">]> 
+
+
+Patient.where("age>15").order(:age).limit(5)
+  Patient Load (0.6ms)  SELECT "patients".* FROM "patients" WHERE (age>15) ORDER BY "patients"."age" ASC LIMIT $1  [["LIMIT", 5]]
+ => #<ActiveRecord::Relation [#<Patient id: 14, name: "Avanish ", address: "Shahjahanpur", contact: 987654000, age: 24, gender: "M", created_at: "2019-09-09 05:20:46", updated_at: "2019-09-10 10:06:03">, #<Patient id: 6, name: "naman", address: "bly", contact: 973473886458, age: 25, gender: "M", created_at: "2019-09-05 11:48:59", updated_at: "2019-09-10 10:06:52">, #<Patient id: 7, name: "Nidhi", address: "Delhi", contact: 978678666, age: 35, gender: "F", created_at: "2019-09-05 11:50:07", updated_at: "2019-09-05 11:50:07">, #<Patient id: 10, name: "Shruti", address: "Bareilly", contact: 9868678677, age: 35, gender: "F", created_at: "2019-09-05 13:09:56", updated_at: "2019-09-05 13:09:56">, #<Patient id: 15, name: "adi", address: "Delhi", contact: 77575757, age: 35, gender: "M", created_at: "2019-09-10 09:56:18", updated_at: "2019-09-10 10:06:37">]>
+
+
+Patient.where("age>15").order(:age).limit(5).only(:where,:order)
+  Patient Load (0.6ms)  SELECT "patients".* FROM "patients" WHERE (age>15) ORDER BY "patients"."age" ASC LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Patient id: 14, name: "Avanish ", address: "Shahjahanpur", contact: 987654000, age: 24, gender: "M", created_at: "2019-09-09 05:20:46", updated_at: "2019-09-10 10:06:03">, #<Patient id: 6, name: "naman", address: "bly", contact: 973473886458, age: 25, gender: "M", created_at: "2019-09-05 11:48:59", updated_at: "2019-09-10 10:06:52">, #<Patient id: 7, name: "Nidhi", address: "Delhi", contact: 978678666, age: 35, gender: "F", created_at: "2019-09-05 11:50:07", updated_at: "2019-09-05 11:50:07">, #<Patient id: 10, name: "Shruti", address: "Bareilly", contact: 9868678677, age: 35, gender: "F", created_at: "2019-09-05 13:09:56", updated_at: "2019-09-05 13:09:56">, #<Patient id: 15, name: "adi", address: "Delhi", contact: 77575757, age: 35, gender: "M", created_at: "2019-09-10 09:56:18", updated_at: "2019-09-10 10:06:37">, #<Patient id: 9, name: "Geeta", address: "Noida", contact: 9876347366, age: 45, gender: "F", created_at: "2019-09-05 13:07:57", updated_at: "2019-09-05 13:07:57">]> 
+
+
+
+ Patient.where("age>15").order(:age).limit(5).only(:where,:limit).pluck(:name,:age)
+   (0.5ms)  SELECT "patients"."name", "patients"."age" FROM "patients" WHERE (age>15) LIMIT $1  [["LIMIT", 5]]
+ => [["Nidhi", 35], ["Geeta", 45], ["Shruti", 35], ["Avanish ", 24], ["adi", 35]] 
+
+
+Patient.where("age>15").order(:age).limit(5).only(:where,:limit).pluck(:name,:age)
+   (0.5ms)  SELECT "patients"."name", "patients"."age" FROM "patients" WHERE (age>15) LIMIT $1  [["LIMIT", 5]]
+ => [["Nidhi", 35], ["Geeta", 45], ["Shruti", 35], ["Avanish ", 24], ["adi", 35]] 
+
+
+
+2.6.3 :032 > Patient.where("age>15").order(:age).reverse_order
+  Patient Load (0.6ms)  SELECT "patients".* FROM "patients" WHERE (age>15) ORDER BY "patients"."age" DESC LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Patient id: 9, name: "Geeta", address: "Noida", contact: 9876347366, age: 45, gender: "F", created_at: "2019-09-05 13:07:57", updated_at: "2019-09-05 13:07:57">, #<Patient id: 7, name: "Nidhi", address: "Delhi", contact: 978678666, age: 35, gender: "F", created_at: "2019-09-05 11:50:07", updated_at: "2019-09-05 11:50:07">, #<Patient id: 10, name: "Shruti", address: "Bareilly", contact: 9868678677, age: 35, gender: "F", created_at: "2019-09-05 13:09:56", updated_at: "2019-09-05 13:09:56">, #<Patient id: 15, name: "adi", address: "Delhi", contact: 77575757, age: 35, gender: "M", created_at: "2019-09-10 09:56:18", updated_at: "2019-09-10 10:06:37">, #<Patient id: 6, name: "naman", address: "bly", contact: 973473886458, age: 25, gender: "M", created_at: "2019-09-05 11:48:59", updated_at: "2019-09-10 10:06:52">, #<Patient id: 14, name: "Avanish ", address: "Shahjahanpur", contact: 987654000, age: 24, gender: "M", created_at: "2019-09-09 05:20:46", updated_at: "2019-09-10 10:06:03">]> 
+
+
+
+
