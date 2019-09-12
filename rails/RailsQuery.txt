@@ -133,6 +133,139 @@ Department.joins(:employees).select(:name).group(:name).count
    (1.0ms)  SELECT COUNT("departments"."name") AS count_name, "departments"."name" AS departments_name FROM "departments" INNER JOIN "employees" ON "employees"."department_id" = "departments"."id" GROUP BY "departments"."name"
  => {"production"=>2, "sales"=>3, "HR"=>4} 
 
+ Department.joins(:employees).select(:name).where(name:['sales','HR']).group(:name).count
+   (1.1ms)  SELECT COUNT("departments"."name") AS count_name, "departments"."name" AS departments_name FROM "departments" INNER JOIN "employees" ON "employees"."department_id" = "departments"."id" WHERE "departments"."name" IN ($1, $2) GROUP BY "departments"."name"  [["name", "sales"], ["name", "HR"]]
+ => {"HR"=>4, "sales"=>3} 
+
+ Employee.select("date(created_at) as date_of_creation").group("date(created_at)").count(:name)
+   (0.8ms)  SELECT COUNT("employees"."name") AS count_name, date(created_at) AS date_created_at FROM "employees" GROUP BY date(created_at)
+ => {Wed, 11 Sep 2019=>4, Thu, 12 Sep 2019=>5} 
+
+Employee.group(:address).count
+   (0.9ms)  SELECT COUNT(*) AS count_all, "employees"."address" AS employees_address FROM "employees" GROUP BY "employees"."address"
+ => {nil=>1, "haryana"=>1, "noida"=>3, "delhi"=>2, "new delhi"=>1, "gurgaon"=>1}
+
+Employee.where('id>3').limit(4).order(:name)
+
+Employee.where('id>3').limit(4).order(:name).unscope(:order)
+  Employee Load (0.8ms)  SELECT "employees".* FROM "employees" WHERE (id>3) LIMIT $1  [["LIMIT", 4]]
+ => #<ActiveRecord::Relation [#<Employee id: 4, name: "shyam", address: "gurgaon", contact_no: 57565757, department_id: 1, created_at: "2019-09-11 12:53:24", updated_at: "2019-09-11 12:53:24">, #<Employee id: 5, name: "ajay", address: "haryana", contact_no: 5657575, department_id: 2, created_at: "2019-09-12 05:48:44", updated_at: "2019-09-12 05:48:44">, #<Employee id: 6, name: "vijay", address: "noida", contact_no: 55657575, department_id: 2, created_at: "2019-09-12 05:49:18", updated_at: "2019-09-12 05:49:18">, #<Employee id: 7, name: "arun", address: "noida", contact_no: 56657575, department_id: 2, created_at: "2019-09-12 05:49:37", updated_at: "2019-09-12 05:49:37">]> 
+
+
+Employee.where('id>3').limit(4).order(:name).only(:limit)
+  Employee Load (0.6ms)  SELECT "employees".* FROM "employees" LIMIT $1  [["LIMIT", 4]]
+ => #<ActiveRecord::Relation [#<Employee id: 1, name: "ravi", address: nil, contact_no: nil, department_id: 1, created_at: "2019-09-11 07:21:54", updated_at: "2019-09-11 07:21:54">, #<Employee id: 2, name: "shyam", address: "new delhi", contact_no: nil, department_id: 1, created_at: "2019-09-11 07:23:12", updated_at: "2019-09-11 07:23:12">, #<Employee id: 3, name: "ravi", address: "delhi", contact_no: 575757, department_id: 1, created_at: "2019-09-11 12:52:50", updated_at: "2019-09-11 12:52:50">, #<Employee id: 4, name: "shyam", address: "gurgaon", contact_no: 57565757, department_id: 1, created_at: "2019-09-11 12:53:24", updated_at: "2019-09-11 12:53:24">]> 
+
+
+Department.joins(:employees).select(:name).group(:name).having('count(*)>2').count
+   (1.0ms)  SELECT COUNT("departments"."name") AS count_name, "departments"."name", "departments"."name" AS departments_name FROM "departments" INNER JOIN "employees" ON "employees"."department_id" = "departments"."id" GROUP BY "departments"."name" HAVING (count(*)>2)
+ => {"sales"=>3, "HR"=>4} 
+
+
+ time = (Time.now.midnight - 1.day)..Time.now.midnight
+
+Employee.all.where(created_at:time).pluck(:id)
+   (0.5ms)  SELECT "employees"."id" FROM "employees" WHERE "employees"."created_at" BETWEEN $1 AND $2  [["created_at", "2019-09-10 18:30:00"], ["created_at", "2019-09-11 18:30:00"]]
+ => [1, 2, 3, 4] 
+
+Teacher.create(name:"Satyajeet Singh",contact_no:75765566,address:'Noida')
+   (0.4ms)  BEGIN
+  Teacher Create (0.6ms)  INSERT INTO "teachers" ("name", "contact_no", "address", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Satyajeet Singh"], ["contact_no", 75765566], ["address", "Noida"], ["created_at", "2019-09-12 10:01:35.692258"], ["updated_at", "2019-09-12 10:01:35.692258"]]
+
+
+gaurav = Teacher.find_or_initialize_by(name:'Gaurav')
+  Teacher Load (0.7ms)  SELECT "teachers".* FROM "teachers" WHERE "teachers"."name" = $1 LIMIT $2  [["name", "Gaurav"], ["LIMIT", 1]]
+ => #<Teacher id: nil, name: "Gaurav", contact_no: nil, address: nil, created_at: nil, updated_at: nil> 
+2.6.3 :015 > gaurav.new_record?
+ => true 
+
+  gaurav.save
+
+Teacher.where(name:'Gaurav').pluck(:name)
+   (0.6ms)  SELECT "teachers"."name" FROM "teachers" WHERE "teachers"."name" = $1  [["name", "Gaurav"]]
+ => ["Gaurav"] 
+
+
+Teacher.find_by_sql("select * from teachers").pluck(:name)
+  Teacher Load (0.7ms)  select * from teachers
+ => ["rishi", "Arjun", "Satyajeet Singh", "Gaurav"] 
+
+Teacher.ids
+   (0.6ms)  SELECT "teachers"."id" FROM "teachers"
+ => [1, 2, 3, 4] 
+
+
+Teacher.exists?(id:[1,2,3])
+
+  Teacher Exists? (0.9ms)  SELECT 1 AS one FROM "teachers" WHERE "teachers"."id" IN ($1, $2, $3) LIMIT $4  [["id", 1], ["id", 2], ["id", 3], ["LIMIT", 1]]
+ => true 
+
+ Teacher.exists?(id:[20,50])
+
+  Teacher Exists? (0.8ms)  SELECT 1 AS one FROM "teachers" WHERE "teachers"."id" IN ($1, $2) LIMIT $3  [["id", 20], ["id", 50], ["LIMIT", 1]]
+ => false 
+
+
+ Teacher.exists?(name:['Gaurav','ajay']
+2.6.3 :057?>   )
+  Teacher Exists? (1.0ms)  SELECT 1 AS one FROM "teachers" WHERE "teachers"."name" IN ($1, $2) LIMIT $3  [["name", "Gaurav"], ["name", "ajay"], ["LIMIT", 1]]
+ => true 
+
+Teacher.exists?
+  Teacher Exists? (0.7ms)  SELECT 1 AS one FROM "teachers" LIMIT $1  [["LIMIT", 1]]
+ => true 
+
+Teacher.any?
+  Teacher Exists? (0.7ms)  SELECT 1 AS one FROM "teachers" LIMIT $1  [["LIMIT", 1]]
+ => true 
+
+ Teacher.many?
+   (43.4ms)  SELECT COUNT(*) FROM "teachers"
+ => true 
+
+ Item.maximum(:price)
+   (0.8ms)  SELECT MAX("items"."price") FROM "items"
+ => 15500 
+
+ Item.minimum(:price)
+   (0.8ms)  SELECT MIN("items"."price") FROM "items"
+ => 8000 
+
+ Item.sum('price')
+   (0.8ms)  SELECT SUM("items"."price") FROM "items"
+ => 60500 
+
+Item.average('price')
+   (1.1ms)  SELECT AVG("items"."price") FROM "items"
+ => 0.121e5 
+
+a = Item.find_or_create_by(name:"samsung",price:6000)
+  Item Load (0.7ms)  SELECT "items".* FROM "items" WHERE "items"."name" = $1 AND "items"."price" = $2 LIMIT $3  [["name", "samsung"], ["price", 6000], ["LIMIT", 1]]
+ => #<Item id: 6, name: "samsung", price: 6000, created_at: "2019-09-12 11:25:29", updated_at: "2019-09-12 11:25:29"> 
+
+
+Item.joins(:comments).group(:name).count
+   (1.1ms)  SELECT COUNT(*) AS count_all, "items"."name" AS items_name FROM "items" INNER JOIN "comments" ON "comments"."commentable_id" = "items"."id" AND "comments"."commentable_type" = $1 GROUP BY "items"."name"  [["commentable_type", "Item"]]
+ => {"redmi7 pro"=>1, "samsung"=>3}
+
+
+ Department.left_outer_joins(:doctors).all
+  Department Load (0.9ms)  SELECT "departments".* FROM "departments" LEFT OUTER JOIN "doctors" ON "doctors"."department_id" = "departments"."id" LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Department id: 1, name: "Physician", created_at: "2019-09-04 06:19:04", updated_at: "2019-09-04 13:19:48">, #<Department id: 1, name: "Physician", created_at: "2019-09-04 06:19:04", updated_at: "2019-09-04 13:19:48">, #<Department id: 1, name: "Physician", created_at: "2019-09-04 06:19:04", updated_at: "2019-09-04 13:19:48">, #<Department id: 1, name: "Physician", created_at: "2019-09-04 06:19:04", updated_at: "2019-09-04 13:19:48">, #<Department id: 3, name: "Pediatrician", created_at: "2019-09-04 06:56:09", updated_at: "2019-09-04 06:56:09">, #<Department id: 3, name: "Pediatrician", created_at: "2019-09-04 06:56:09", updated_at: "2019-09-04 06:56:09">, #<Department id: 6, name: "Neurologist", created_at: "2019-09-04 07:00:45", updated_at: "2019-09-04 07:00:45">, #<Department id: 7, name: "Cardiologist", created_at: "2019-09-04 07:01:54", updated_at: "2019-09-04 07:01:54">, #<Department id: 7, name: "Cardiologist", created_at: "2019-09-04 07:01:54", updated_at: "2019-09-04 07:01:54">, #<Department id: 8, name: "Psychiatrist", created_at: "2019-09-04 07:02:56", updated_a
+
+
+ Department.left_outer_joins(:doctors).all.pluck(:id,:name,'doctors.name')
+   (1.0ms)  SELECT "departments"."id", "departments"."name", doctors.name FROM "departments" LEFT OUTER JOIN "doctors" ON "doctors"."department_id" = "departments"."id"
+ => [[3, "Pediatrician", "Dr. Rajesh Awasthi"], [3, "Pediatrician", "Debu Mahto"], [6, "Neurologist", "Dr. Neena Kappor"], [7, "Cardiologist", " Dr. Raman"], [7, "Cardiologist", " Rajesh "], [8, "Psychiatrist", "Dr. Sanjeev Singh"], [1, "Physician", "Dr. Naveen Rawat"], [1, "Physician", "Dr. Shravan Kumar"], [1, "Physician", "Dr. Piyush Goyal"], [1, "Physician", "Dhananjaya Seth"], [10, "Surgeon", "Dr. Parvindar Singh"]] 
+
+
+
+
+
+
+
+
+
 
 
 
