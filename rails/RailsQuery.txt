@@ -74,6 +74,65 @@ Patient.where("age>15").order(:age).limit(5).only(:where,:limit).pluck(:name,:ag
   Patient Load (0.6ms)  SELECT "patients".* FROM "patients" WHERE (age>15) ORDER BY "patients"."age" DESC LIMIT $1  [["LIMIT", 11]]
  => #<ActiveRecord::Relation [#<Patient id: 9, name: "Geeta", address: "Noida", contact: 9876347366, age: 45, gender: "F", created_at: "2019-09-05 13:07:57", updated_at: "2019-09-05 13:07:57">, #<Patient id: 7, name: "Nidhi", address: "Delhi", contact: 978678666, age: 35, gender: "F", created_at: "2019-09-05 11:50:07", updated_at: "2019-09-05 11:50:07">, #<Patient id: 10, name: "Shruti", address: "Bareilly", contact: 9868678677, age: 35, gender: "F", created_at: "2019-09-05 13:09:56", updated_at: "2019-09-05 13:09:56">, #<Patient id: 15, name: "adi", address: "Delhi", contact: 77575757, age: 35, gender: "M", created_at: "2019-09-10 09:56:18", updated_at: "2019-09-10 10:06:37">, #<Patient id: 6, name: "naman", address: "bly", contact: 973473886458, age: 25, gender: "M", created_at: "2019-09-05 11:48:59", updated_at: "2019-09-10 10:06:52">, #<Patient id: 14, name: "Avanish ", address: "Shahjahanpur", contact: 987654000, age: 24, gender: "M", created_at: "2019-09-09 05:20:46", updated_at: "2019-09-10 10:06:03">]> 
 
+Employee.find(3)
+  Employee Load (0.8ms)  SELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2  [["id", 3], ["LIMIT", 1]]
+ => #<Employee id: 3, name: "ravi", address: "delhi", contact_no: 575757, department_id: 1, created_at: "2019-09-11 12:52:50", updated_at: "2019-09-11 12:52:50
+
+ Employee.where('address=?','delhi')
+  Employee Load (1.2ms)  SELECT "employees".* FROM "employees" WHERE (address='delhi') LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Employee id: 3, name: "ravi", address: "delhi", contact_no: 575757, department_id: 1, created_at: "2019-09-11 12:52:50", updated_at: "2019-09-11 12:52:50">]> 
+
+ Employee.find(1,2)
+  Employee Load (0.8ms)  SELECT "employees".* FROM "employees" WHERE "employees"."id" IN ($1, $2)  [["id", 1], ["id", 2]]
+ => [#<Employee id: 1, name: "ravi", address: nil, contact_no: nil, department_id: 1, created_at: "2019-09-11 07:21:54", updated_at: "2019-09-11 07:21:54">, #<Employee id: 2, name: "shyam", address: "new delhi", contact_no: nil, department_id: 1, created_at: "2019-09-11 07:23:12", updated_at: "2019-09-11 07:23:12">] 
+
+ Employee.take(2)
+  Employee Load (0.6ms)  SELECT "employees".* FROM "employees" LIMIT $1  [["LIMIT", 2]]
+ => [#<Employee id: 1, name: "ravi", address: nil, contact_no: nil, department_id: 1, created_at: "2019-09-11 07:21:54", updated_at: "2019-09-11 07:21:54">, #<Employee id: 2, name: "shyam", address: "new delhi", contact_no: nil, department_id: 1, created_at: "2019-09-11 07:23:12", updated_at: "2019-09-11 07:23:12">] 
+
+
+Employee.first(2).pluck(:name)
+  Employee Load (0.7ms)  SELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1  [["LIMIT", 2]]
+ => ["ravi", "shyam"] 
+
+Employee.last(4).pluck(:name)
+  Employee Load (0.7ms)  SELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1  [["LIMIT", 4]]
+ => ["ravi", "shyam", "ravi", "shyam"] 
+
+
+ Employee.find_by name:'ravi'
+  Employee Load (0.4ms)  SELECT "employees".* FROM "employees" WHERE "employees"."name" = $1 LIMIT $2  [["name", "ravi"], ["LIMIT", 1]]
+ => #<Employee id: 1, name: "ravi", address: nil, contact_no: nil, department_id: 1, created_at: "2019-09-11 07:21:54", updated_at: "2019-09-11 07:21:54">
+
+
+Employee.find_by! name:'not exist'
+  Employee Load (0.7ms)  SELECT "employees".* FROM "employees" WHERE "employees"."name" = $1 LIMIT $2  [["name", "not exist"], ["LIMIT", 1]]
+Traceback (most recent call last):
+        1: from (irb):24
+ActiveRecord::RecordNotFound (Couldn't find Employee)
+
+
+Employee.where('name like ?','s%')
+  Employee Load (0.8ms)  SELECT "employees".* FROM "employees" WHERE (name like 's%') LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Employee id: 2, name: "shyam", address: "new delhi", contact_no: nil, department_id: 1, created_at: "2019-09-11 07:23:12", updated_at: "2019-09-11 07:23:12">, #<Employee id: 4, name: "shyam", address: "gurgaon", contact_no: 57565757, department_id: 1, created_at: "2019-09-11 12:53:24", updated_at: "2019-09-11 12:53:24">]> 
+
+Employee.where('address= ?','delhi')
+  Employee Load (0.8ms)  SELECT "employees".* FROM "employees" WHERE (address= 'delhi') LIMIT $1  [["LIMIT", 11]]
+ => #<ActiveRecord::Relation [#<Employee id: 3, name: "ravi", address: "delhi", contact_no: 575757, department_id: 1, created_at: "2019-09-11 12:52:50", updated_at: "2019-09-11 12:52:50">]> 
+
+Department.all.pluck(:name)
+   (0.7ms)  SELECT "departments"."name" FROM "departments"
+ => ["HR", "sales", "production"] 
+
+ Department.first.employees.pluck(:name)
+  Department Load (0.6ms)  SELECT "departments".* FROM "departments" ORDER BY "departments"."id" ASC LIMIT $1  [["LIMIT", 1]]
+   (0.5ms)  SELECT "employees"."name" FROM "employees" WHERE "employees"."department_id" = $1  [["department_id", 1]]
+ => ["ravi", "shyam", "ravi", "shyam"] 
+
+Department.joins(:employees).select(:name).group(:name).count
+   (1.0ms)  SELECT COUNT("departments"."name") AS count_name, "departments"."name" AS departments_name FROM "departments" INNER JOIN "employees" ON "employees"."department_id" = "departments"."id" GROUP BY "departments"."name"
+ => {"production"=>2, "sales"=>3, "HR"=>4} 
+
 
 
 
