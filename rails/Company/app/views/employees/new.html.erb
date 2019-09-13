@@ -1,0 +1,7 @@
+<%= form_for @employee do |employee|%>
+  Name: <%= employee.text_field :name %><br><br>
+  Address: <%= employee.text_field :address %><br><br>
+  Contact: <%= employee.text_field :contact_no %><br><br>
+  <%= employee.collection_select(:department_id, Department.all,:id,:name, prompt: true)%><br><br>
+  <%= employee.submit %>
+<%end%>
