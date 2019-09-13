@@ -6,6 +6,7 @@
 		<th>Name</th>
 		<th>Address</th>
 		<th>Contact</th>
+		<th>Details</th>
 	</tr>
 	<% @employees.each do|employee|%>
 	<tr>
@@ -13,6 +14,14 @@
 		<td><%= employee.name %></td>
 		<td><%= employee.address %></td>
 		<td><%= employee.contact_no %></td>
+		<td>
+			<%= link_to "Get Details","/employees/#{employee.id}" %>
+			<%= link_to "Edit","/employees/#{employee.id}/edit" %>
+			<%= link_to "Delete","/employees/#{employee.id}" , method: "delete"%>
+	    </td>
+
 	</tr>
 	<%end%>
 <table>
+
+<%= link_to "Add Employee",new_employee_path %>
