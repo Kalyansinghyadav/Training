@@ -4,7 +4,12 @@ class EmployeesController < ApplicationController
 	end
 
 	def index
-		@employees = Employee.all
+		if params[:id]
+			department = Department.find_by(id: params[:id])
+			@employees = department.employees.order(:name)
+		else
+		  @employees = Employee.all.order(:name)
+		end
 	end
 
 	def create

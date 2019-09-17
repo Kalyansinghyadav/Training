@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+ 
+	resources :employees, :departments
+	
+
+ # root to: "employees#index"
+
+   get  "/departments/new" => "departments#new"
+  get 'departments/index'
+  get 'departments/edit'
+  get 'departments/create'
 end
